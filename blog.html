@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kunsoth AI Blog</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .nav-links a {
+        font-size: 20px;
+        color: rgb(14, 13, 13);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .logo {
+        font-size: 24px;
+        color: rgb(3, 3, 3);
+    }
+
+    .cta-button {
+        background: rgb(0, 0, 0);
+        color: rgb(255, 251, 251);
+        padding: 12px 24px;
+        border-radius: 25px;
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+
+  <!-- Navbar (same as home) -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Kunsoth AI</div>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <a href="index.html#contact" class="cta-button">Get Started</a>
+    </div>
+  </nav>
+
+  <main class="blog-page">
+    <!-- Featured Blog -->
+    <section class="featured-blog">
+      <div class="featured-text">
+        <h1>
+            <a href="how_to_Break_Into_the_Corporate_Gifting_Market.html">
+              How to Break Into the Corporate Gifting Market
+            </a>
+        </h1>
+          
+        <p>
+            Are you a small e-commerce business looking to break into the corporate gifting market — but unsure where to begin?
+        </p>
+        <p>
+            In this article, we’ll walk through a few clear, actionable strategies that will help you stand out, attract the right corporate clients, and win consistent bulk orders, without spending a fortune on ads.
+        </p>
+        <a href="how_to_Break_Into_the_Corporate_Gifting_Market.html" class="read-more">Read More →</a>
+      </div>
+      <div class="featured-image">
+        <img src="images/blog-image1.png" alt="Featured blog visual">
+      </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid">
+        <a href="why_corporate_gfiting.html" class="blog-card-link">
+            <article class="blog-card">
+              <img src="images/image5.png" alt="Corporate Gifting blog cover">
+              <h3>Corporate Gifting: The Untapped Growth Engine for Small Businesses</h3>
+              <p>Learn how Corporate Gifting can be the Most Lucrative Growth Channel for Small Businesses</p>
+              <span class="read-more">Read More →</span>
+            </article>
+        </a>  
+          
+        <a href="how_to_win_over_coroporate_gifting_clients.html" class="blog-card-link">
+            <article class="blog-card">
+              <img src="images/image3.png" alt="Corporate Gifting blog cover">
+              <h3>What Corporate Gifting Decision Makers Really Want.</h3>
+              <p>Take a look at what drives corporate gifting decision makers to choose your brand.</p>
+              <span class="read-more">Read More →</span>
+            </article>
+        </a>  
+
+        <a href="how_to_Time_your_Corporate_Gifting_Strategy.html" class="blog-card-link">
+            <article class="blog-card">
+              <img src="images/image6.png" alt="Corporate Gifting blog cover">
+              <h3>How to Time Your Strategy for Maximum Revenue</h3>
+              <p>Stay ahead of the competition by Knowing when companies buy gifts and why they do it.</p>
+              <span class="read-more">Read More →</span>
+            </article>
+        </a>  
+
+        <a href="how_to_prepare_for_holiday_season.html" class="blog-card-link">
+            <article class="blog-card">
+              <img src="images/image4.png" alt="Corporate Gifting blog cover">
+              <h3>How to Prepare for the Holiday Season (and Make the Most of it)</h3>
+              <p>Take advantage of the biggest opportunity to close the year with the best corporate gifting deals.</p>
+              <span class="read-more">Read More →</span>
+            </article>
+        </a>  
+
+    </section>
+  </main>
+
+  <script>
+    //Nav Bar navigation
+    let lastScroll = 0;
+    const nav = document.querySelector('nav');
+  
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+  
+      if (currentScroll > lastScroll) {
+        // scrolling down → hide
+        nav.classList.add('hidden');
+      } else {
+        // scrolling up → show
+        nav.classList.remove('hidden');
+      }
+  
+      lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+    });
+  </script>
+</body>
+</html>

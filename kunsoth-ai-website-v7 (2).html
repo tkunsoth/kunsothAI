@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZ049054TW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GZ049054TW');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunsoth AI — Corporate Client Acquisition for F&B & Hospitality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f0d0a;
+  --cream: #faf8f3;
+  --warm: #f5f0e8;
+  --gold: #c8922a;
+  --gold-light: #e8b84b;
+  --rust: #b84c1e;
+  --sage: #4a6741;
+  --muted: #7a7065;
+  --border: rgba(15,13,10,0.1);
+  --border-warm: rgba(200,146,42,0.2);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.6;
+}
+
+.serif { font-family: 'Playfair Display', serif; }
+.mono  { font-family: 'DM Mono', monospace; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  padding: 0 5vw; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(250,248,243,0.92);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--ink); text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links {
+  display: flex; align-items: center; gap: 32px; list-style: none;
+}
+.nav-links a {
+  font-size: 13px; font-weight: 500; letter-spacing: 0.02em;
+  color: var(--muted); text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  background: var(--ink); color: var(--cream) !important;
+  padding: 9px 20px; border-radius: 2px;
+  font-size: 13px !important; transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--gold) !important; color: var(--ink) !important; }
+
+/* Hamburger */
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+}
+.nav-hamburger span {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--ink); transition: all 0.3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+.nav-mobile {
+  display: none; position: fixed;
+  top: 64px; left: 0; right: 0;
+  background: rgba(250,248,243,0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 5vw 32px;
+  flex-direction: column; gap: 0;
+  z-index: 199;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  font-size: 15px; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+.nav-mobile a:hover { color: var(--ink); }
+.nav-mobile .mobile-cta {
+  margin-top: 20px;
+  background: var(--ink); color: var(--cream);
+  padding: 14px 24px; border-radius: 2px;
+  text-align: center; font-weight: 600; font-size: 14px;
+  border-bottom: none;
+}
+.nav-mobile .mobile-cta:hover { background: var(--gold); color: var(--ink); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding: 120px 5vw 80px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+  position: relative; overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; right: -200px; top: 50%;
+  transform: translateY(-50%);
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(200,146,42,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 28px;
+}
+.hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 5.5vw, 76px);
+  font-weight: 900; line-height: 1.05;
+  letter-spacing: -2px; margin-bottom: 28px;
+}
+.hero-headline em { font-style: italic; color: var(--gold); }
+.hero-sub {
+  font-size: 17px; line-height: 1.7;
+  color: var(--muted); max-width: 480px; margin-bottom: 44px;
+}
+.hero-actions { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.hero-action-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.hero-audit-link {
+  font-size: 13px; color: var(--muted);
+  text-decoration: none; letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1px; transition: color 0.2s, border-color 0.2s;
+}
+.hero-audit-link:hover { color: var(--gold); border-color: var(--gold); }
+
+.btn-primary {
+  background: var(--ink); color: var(--cream);
+  padding: 14px 32px; border-radius: 2px;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+  text-decoration: none; border: 1.5px solid var(--ink);
+  transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.btn-primary:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.btn-primary .arr { transition: transform 0.2s; }
+.btn-primary:hover .arr { transform: translateX(4px); }
+
+.btn-ghost {
+  color: var(--ink); padding: 14px 0;
+  font-size: 14px; font-weight: 500;
+  text-decoration: none; border-bottom: 1.5px solid var(--ink);
+  transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-ghost:hover { color: var(--gold); border-color: var(--gold); }
+
+/* Hero card */
+.hero-visual { position: relative; }
+.hero-card {
+  background: white; border: 1px solid var(--border); border-radius: 4px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(15,13,10,0.08), 0 4px 16px rgba(15,13,10,0.04);
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.hero-card-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 16px;
+}
+.signal-row {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+}
+.signal-row:last-of-type { border-bottom: none; }
+.signal-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.dot-high { background: #22c55e; box-shadow: 0 0 8px rgba(34,197,94,0.5); }
+.dot-mid  { background: var(--gold); box-shadow: 0 0 8px rgba(200,146,42,0.5); }
+.dot-low  { background: #94a3b8; }
+.signal-company { font-size: 13px; font-weight: 600; margin-bottom: 3px; }
+.signal-detail  { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.signal-tag {
+  margin-top: 6px; display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.08em;
+  padding: 2px 8px; border-radius: 20px;
+  background: rgba(200,146,42,0.1); color: var(--gold);
+  border: 1px solid rgba(200,146,42,0.2);
+}
+.hero-card-footer {
+  margin-top: 20px; padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.hcf-stat { text-align: center; }
+.hcf-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--ink); }
+.hcf-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.hero-badge {
+  position: absolute; top: -20px; right: -20px;
+  background: var(--gold); color: var(--ink);
+  width: 90px; height: 90px; border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; text-align: center;
+  line-height: 1.3; letter-spacing: 0.02em;
+  box-shadow: 0 8px 24px rgba(200,146,42,0.35);
+  animation: spin-slow 20s linear infinite;
+}
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* ── MARQUEE ── */
+.marquee-strip { background: var(--ink); color: var(--cream); padding: 14px 0; overflow: hidden; white-space: nowrap; }
+.marquee-track { display: inline-flex; animation: marquee 28s linear infinite; }
+.marquee-item {
+  display: inline-flex; align-items: center; gap: 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0 40px; color: rgba(250,248,243,0.7);
+}
+.marquee-item span { color: var(--gold-light); }
+.marquee-dot { width: 4px; height: 4px; background: var(--gold-light); border-radius: 50%; flex-shrink: 0; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── SECTIONS ── */
+section { padding: 100px 5vw; }
+.section-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 20px;
+}
+.section-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 54px);
+  font-weight: 900; line-height: 1.1;
+  letter-spacing: -1.5px; margin-bottom: 20px;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+.section-sub { font-size: 16px; line-height: 1.7; color: var(--muted); max-width: 560px; }
+
+/* ── PROBLEM ── */
+.problem { background: var(--warm); }
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 60px; align-items: start; }
+.problem-list { display: flex; flex-direction: column; gap: 0; }
+.problem-item {
+  display: flex; gap: 20px; padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  opacity: 0; animation: fadeUp 0.5s ease forwards;
+}
+.problem-item:nth-child(1) { animation-delay: 0.1s; }
+.problem-item:nth-child(2) { animation-delay: 0.2s; }
+.problem-item:nth-child(3) { animation-delay: 0.3s; }
+.problem-item:nth-child(4) { animation-delay: 0.4s; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.prob-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px; font-weight: 700; color: rgba(200,146,42,0.2);
+  flex-shrink: 0; line-height: 1; margin-top: 4px; min-width: 48px;
+}
+.prob-title { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.prob-desc  { font-size: 14px; color: var(--muted); line-height: 1.65; }
+.problem-right { } /* vertical centering handled by quotes-stack CSS above */
+.quote-card { background: var(--ink); border-radius: 4px; padding: 40px; color: var(--cream); }
+.quote-text { font-family: 'Playfair Display', serif; font-size: 22px; font-style: italic; line-height: 1.5; margin-bottom: 24px; }
+.quote-attr { font-size: 13px; color: rgba(250,248,243,0.5); font-family: 'DM Mono', monospace; letter-spacing: 0.06em; }
+.quote-attr strong { color: var(--gold-light); font-weight: 500; }
+
+/* ── QUOTE CARDS — always visible, staggered diagonal ── */
+.problem-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quotes-stack {
+  position: relative;
+  width: 100%;
+  height: 570px;
+}
+
+/* Each card is absolutely positioned, staggered right + down like the wireframe */
+.quote-card-v2 {
+  position: absolute;
+  width: 85%;
+  cursor: default;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.3s ease,
+              z-index 0s;
+}
+.quote-card-v2:nth-child(1) { top: 0;     left: 0;   z-index: 3; }
+.quote-card-v2:nth-child(2) { top: 152px; left: 8%;  z-index: 2; }
+.quote-card-v2:nth-child(3) { top: 304px; left: 15%; z-index: 1; }
+
+.quote-card-v2:hover { z-index: 10; transform: translateY(-5px) scale(1.02); }
+.quote-card-v2:hover .quote-card-inner {
+  box-shadow: 0 20px 56px rgba(15,13,10,0.4);
+}
+
+.quote-card-inner {
+  background: var(--ink);
+  border-radius: 4px;
+  color: var(--cream);
+  padding: 24px 28px;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(15,13,10,0.18);
+}
+
+.quote-icon {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; line-height: 1;
+  color: var(--gold-light); opacity: 0.5;
+  margin-bottom: 10px;
+}
+.quote-full-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px; font-style: italic;
+  line-height: 1.7; color: var(--cream);
+  margin-bottom: 14px;
+}
+.quote-role {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold-light); opacity: 0.65;
+}
+
+/* ── HOW IT WORKS step 1 rename ── */
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 60px; }
+.step { background: white; padding: 36px 28px; position: relative; transition: transform 0.2s; }
+.step:hover { transform: translateY(-4px); z-index: 2; box-shadow: 0 12px 40px rgba(15,13,10,0.1); }
+.step-num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: rgba(200,146,42,0.15); line-height: 1; margin-bottom: 16px; }
+.step-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.step-desc  { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+/* ── WHO WE SERVE ── */
+.icp-section { background: var(--warm); }
+.icp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+.icp-card {
+  background: white; border: 1px solid var(--border);
+  border-radius: 4px; padding: 36px;
+  position: relative; overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.icp-card:hover { box-shadow: 0 16px 48px rgba(15,13,10,0.1); transform: translateY(-4px); }
+.icp-card::before {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+}
+.icp-card:hover::before { transform: scaleX(1); }
+.icp-icon {
+  width: 48px; height: 48px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.icp-icon svg { width: 22px; height: 22px; }
+/* Each card gets its own icon accent via nth-child */
+.icp-card:nth-child(1) .icp-icon { background: rgba(184, 76, 30, 0.1); }
+.icp-card:nth-child(1) .icp-icon svg { stroke: #b84c1e; }
+.icp-card:nth-child(2) .icp-icon { background: rgba(74, 103, 65, 0.1); }
+.icp-card:nth-child(2) .icp-icon svg { stroke: #4a6741; }
+.icp-card:nth-child(3) .icp-icon { background: rgba(45, 85, 140, 0.1); }
+.icp-card:nth-child(3) .icp-icon svg { stroke: #2d558c; }
+.icp-card:nth-child(4) .icp-icon { background: rgba(200, 146, 42, 0.12); }
+.icp-card:nth-child(4) .icp-icon svg { stroke: #a87520; }
+.icp-card:nth-child(5) .icp-icon { background: rgba(90, 60, 120, 0.1); }
+.icp-card:nth-child(5) .icp-icon svg { stroke: #5a3c78; }
+.icp-card:nth-child(6) .icp-icon { background: rgba(30, 120, 100, 0.1); }
+.icp-card:nth-child(6) .icp-icon svg { stroke: #1e7864; }
+.icp-title { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+.icp-desc  { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+.icp-examples { display: flex; flex-wrap: wrap; gap: 6px; }
+.icp-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.06em;
+  padding: 4px 10px; border-radius: 20px;
+  background: rgba(200,146,42,0.08);
+  border: 1px solid rgba(200,146,42,0.15);
+  color: var(--muted);
+}
+
+/* ── RESULTS ── */
+.results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+.stat-stack { display: flex; flex-direction: column; gap: 40px; }
+.stat-item { display: flex; gap: 24px; align-items: flex-start; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+.stat-item:last-child { border-bottom: none; padding-bottom: 0; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 900; color: var(--gold); line-height: 1; flex-shrink: 0; width: 140px; }
+.stat-label { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.stat-desc  { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.case-card { background: var(--ink); border-radius: 4px; overflow: hidden; }
+.case-header { padding: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.case-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px; }
+.case-name { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+.case-sub { font-size: 13px; color: rgba(250,248,243,0.5); }
+.case-clients { padding: 24px 32px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.case-clients-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,248,243,0.3); margin-bottom: 12px; }
+.client-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.client-chip { background: rgba(250,248,243,0.06); border: 1px solid rgba(250,248,243,0.1); color: rgba(250,248,243,0.8); font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 2px; }
+.case-metrics { padding: 24px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cm-num { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--gold-light); }
+.cm-label { font-size: 11px; color: rgba(250,248,243,0.4); margin-top: 2px; }
+
+/* ── TEAM ── */
+.team-section { background: var(--cream); }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+.team-card {
+  background: white; border: 1px solid var(--border);
+  border-radius: 4px; overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.team-card:hover { box-shadow: 0 16px 48px rgba(15,13,10,0.08); transform: translateY(-3px); }
+.team-photo {
+  height: 220px; background: var(--warm);
+  display: flex; align-items: center; justify-content: center;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden; position: relative;
+}
+.team-photo-placeholder {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: rgba(200,146,42,0.12);
+  border: 2px solid rgba(200,146,42,0.2);
+  display: flex; align-items: center; justify-content: center;
+}
+.team-photo-placeholder svg { width: 36px; height: 36px; color: var(--gold); }
+.team-initials {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--gold); letter-spacing: -1px;
+}
+.team-body { padding: 28px; }
+.team-name { font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 700; margin-bottom: 4px; }
+.team-role {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px;
+}
+.team-bio { font-size: 13px; color: var(--muted); line-height: 1.7; }
+.team-links { display: flex; gap: 12px; margin-top: 16px; }
+.team-link {
+  width: 32px; height: 32px; border-radius: 2px;
+  background: rgba(200,146,42,0.08);
+  border: 1px solid rgba(200,146,42,0.15);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; transition: background 0.2s;
+}
+.team-link:hover { background: var(--gold); }
+.team-link:hover svg { color: var(--ink); }
+.team-link svg { width: 14px; height: 14px; color: var(--gold); }
+
+/* ── BLOG ── */
+.blog { background: var(--warm); }
+.blog-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 48px; }
+.blog-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 24px; align-items: start; }
+.blog-card {
+  background: white; border: 1px solid var(--border); border-radius: 4px;
+  overflow: hidden; text-decoration: none; color: inherit;
+  display: flex; flex-direction: column;
+  transition: box-shadow 0.25s, transform 0.25s;
+  cursor: pointer;
+}
+.blog-card:hover { box-shadow: 0 16px 48px rgba(15,13,10,0.1); transform: translateY(-4px); }
+.blog-card.featured { grid-row: 1 / 3; align-self: stretch; }
+.blog-thumb {
+  background: var(--warm); height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  border-bottom: 1px solid var(--border); flex-shrink: 0;
+  overflow: hidden; position: relative;
+}
+.blog-card.featured .blog-thumb { height: 280px; }
+.blog-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.blog-thumb-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(200,146,42,0.15) 0%, rgba(15,13,10,0.05) 100%);
+}
+.blog-body { padding: 24px 28px; display: flex; flex-direction: column; }
+.blog-card.featured .blog-body { padding: 28px 36px; }
+.blog-cat { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.blog-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+.blog-card.featured .blog-title { font-size: 24px; }
+.blog-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+.blog-read { font-size: 12px; font-weight: 600; color: var(--gold); font-family: 'DM Mono', monospace; letter-spacing: 0.06em; display: flex; align-items: center; gap: 6px; margin-top: auto; }
+
+/* ── OFFER ── */
+.offer-section { background: var(--ink); color: var(--cream); }
+.offer-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.offer-section .section-eyebrow { color: var(--gold-light); }
+.offer-section .section-eyebrow::before { background: var(--gold-light); }
+.offer-section .section-title { color: var(--cream); }
+.offer-section .section-sub { color: rgba(250,248,243,0.6); }
+.offer-box { background: rgba(250,248,243,0.04); border: 1px solid rgba(250,248,243,0.1); border-radius: 4px; padding: 40px; }
+.offer-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(250,248,243,0.3); margin-bottom: 20px; }
+.offer-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--gold-light); margin-bottom: 20px; line-height: 1.3; }
+.offer-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+.offer-item { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; line-height: 1.6; color: rgba(250,248,243,0.8); }
+.offer-check { width: 18px; height: 18px; flex-shrink: 0; background: rgba(200,146,42,0.2); border: 1px solid rgba(200,146,42,0.4); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--gold-light); margin-top: 2px; }
+.offer-cta-stack { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.offer-cta-note { font-size: 12px; color: rgba(250,248,243,0.35); font-family: 'DM Mono', monospace; letter-spacing: 0.04em; }
+.offer-audit-link { font-size: 13px; color: rgba(250,248,243,0.45); text-decoration: none; border-bottom: 1px solid rgba(250,248,243,0.15); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
+.offer-audit-link:hover { color: var(--gold-light); border-color: var(--gold-light); }
+
+.btn-gold { background: var(--gold); color: var(--ink); padding: 14px 32px; border-radius: 2px; font-size: 14px; font-weight: 700; letter-spacing: 0.03em; text-decoration: none; border: 1.5px solid var(--gold); transition: all 0.2s; display: inline-flex; align-items: center; gap: 10px; }
+.btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+/* ── FOOTER ── */
+footer { background: var(--ink); color: var(--cream); padding: 60px 5vw 40px; border-top: 1px solid rgba(250,248,243,0.06); }
+.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
+.footer-brand-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 900; color: var(--cream); margin-bottom: 12px; }
+.footer-brand-name span { color: var(--gold); }
+.footer-desc { font-size: 13px; color: rgba(250,248,243,0.4); line-height: 1.7; max-width: 280px; }
+.footer-col-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(250,248,243,0.3); margin-bottom: 20px; }
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { font-size: 13px; color: rgba(250,248,243,0.5); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold-light); }
+.footer-bottom { padding-top: 24px; border-top: 1px solid rgba(250,248,243,0.06); display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: rgba(250,248,243,0.25); font-family: 'DM Mono', monospace; letter-spacing: 0.04em; }
+
+/* ── ARTICLE PAGES ── */
+.article-page { display: none; min-height: 100vh; }
+.article-page.active { display: block; }
+.article-hero {
+  padding: 120px 5vw 60px;
+  background: var(--warm); border-bottom: 1px solid var(--border);
+}
+.article-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold);
+  text-decoration: none; margin-bottom: 32px;
+  transition: gap 0.2s;
+}
+.article-back:hover { gap: 12px; }
+.article-cat { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.article-headline { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4.5vw, 58px); font-weight: 900; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 20px; max-width: 800px; }
+.article-sub { font-size: 18px; line-height: 1.7; color: var(--muted); max-width: 680px; margin-bottom: 32px; }
+.article-meta { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--muted); }
+.article-img {
+  width: 100%; max-height: 480px; object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+.article-img-placeholder {
+  width: 100%; height: 400px;
+  display: flex; align-items: center; justify-content: center;
+  border-bottom: 1px solid var(--border);
+}
+.article-body { padding: 60px 5vw; max-width: 720px; margin: 0 auto; }
+.article-body h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; margin: 40px 0 16px; letter-spacing: -0.5px; }
+.article-body p { font-size: 16px; line-height: 1.8; color: #2a2520; margin-bottom: 20px; }
+.article-body ul { margin: 0 0 20px 20px; }
+.article-body ul li { font-size: 16px; line-height: 1.8; color: #2a2520; margin-bottom: 8px; }
+.article-body blockquote { border-left: 3px solid var(--gold); padding: 16px 24px; margin: 32px 0; background: var(--warm); border-radius: 0 4px 4px 0; }
+.article-body blockquote p { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; margin: 0; color: var(--ink); }
+
+/* ── ALL ARTICLES PAGE ── */
+.all-articles-page { display: none; min-height: 100vh; }
+.all-articles-page.active { display: block; }
+.all-articles-hero { padding: 120px 5vw 60px; background: var(--warm); border-bottom: 1px solid var(--border); }
+.all-articles-grid { padding: 60px 5vw; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+/* ── MAIN SITE ── */
+#main-site { display: block; }
+#main-site.hidden { display: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 48px; padding: 100px 5vw 60px; }
+  .hero-visual { display: none; }
+  .hero-headline { font-size: clamp(38px, 10vw, 56px); }
+  .problem-grid { grid-template-columns: 1fr; }
+  .problem-right { display: block; margin-top: 40px; }
+  .quotes-stack { position: static; height: auto; display: flex; flex-direction: column; gap: 12px; }
+  .quote-card-v2 { position: static; width: 100%; }
+  .process-steps { grid-template-columns: 1fr 1fr; gap: 2px; }
+  .icp-grid { grid-template-columns: 1fr 1fr; }
+  .results-grid { grid-template-columns: 1fr; gap: 48px; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .blog-card.featured { grid-row: auto; }
+  .offer-inner { grid-template-columns: 1fr; gap: 48px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .all-articles-grid { grid-template-columns: 1fr 1fr; }
+  section { padding: 72px 5vw; }
+}
+@media (max-width: 560px) {
+  .hero { padding: 90px 5vw 48px; }
+  .hero-headline { font-size: clamp(32px, 11vw, 44px); letter-spacing: -1.5px; }
+  .hero-sub { font-size: 15px; }
+  .process-steps { grid-template-columns: 1fr; }
+  .icp-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .all-articles-grid { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr; }
+  .offer-box { padding: 28px 20px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .article-body { padding: 40px 5vw; }
+  .hero-action-row { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-logo" onclick="showMain(event)">Kunsoth <span>AI</span></a>
+  <ul class="nav-links">
+    <li><a href="#how-it-works" onclick="showMain(event)">How It Works</a></li>
+    <li><a href="#who-we-serve" onclick="showMain(event)">Who We Serve</a></li>
+    <li><a href="#results" onclick="showMain(event)">Results</a></li>
+    <li><a href="#" onclick="showAllArticles(event)">Resources</a></li>
+    <li><a href="#offer" onclick="showMain(event)" class="nav-cta">Get Free Leads →</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="mobileNav">
+  <a href="#how-it-works" onclick="showMain(event); closeMobileNav()">How It Works</a>
+  <a href="#who-we-serve" onclick="showMain(event); closeMobileNav()">Who We Serve</a>
+  <a href="#results" onclick="showMain(event); closeMobileNav()">Results</a>
+  <a href="#" onclick="showAllArticles(event); closeMobileNav()">Resources</a>
+  <a href="#team" onclick="showMain(event); closeMobileNav()">Team</a>
+  <a href="#offer" onclick="showMain(event); closeMobileNav()" class="mobile-cta">Get Free Leads →</a>
+</div>
+
+<!-- ══════════════════════════════ MAIN SITE ══════════════════════════════ -->
+<div id="main-site">
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Corporate Client Acquisition</div>
+    <h1 class="hero-headline">
+      Your food is<br>
+      <em>remarkable.</em><br>
+      Your pipeline<br>
+      should be too.
+    </h1>
+    <p class="hero-sub">
+      We help food, catering, and hospitality businesses land more corporate clients — consistently, not just when a referral happens to come in.
+    </p>
+    <div class="hero-actions">
+      <div class="hero-action-row">
+        <a href="https://forms.gle/FjbbRSvrBuBU38BY7" target="_blank" class="btn-primary">Get 50 Free Corporate Leads <span class="arr">→</span></a>
+        <a href="#how-it-works" class="btn-ghost">See how it works</a>
+      </div>
+      <a href="https://calendar.app.google/uxSthyqBCJopb4nq9" target="_blank" class="hero-audit-link">Prefer to talk first? Book a 20-min strategy call →</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-badge">AI-<br>Powered<br>Signals</div>
+    <div class="hero-card">
+      <div class="hero-card-label">Live Lead Intelligence — Today's Signals</div>
+      <div class="signal-row">
+        <div class="signal-dot dot-high"></div>
+        <div>
+          <div class="signal-company">Meridian Corporate Catering</div>
+          <div class="signal-detail">Website: executive lunch program &nbsp;·&nbsp; LinkedIn: corporate clients tagged</div>
+          <div class="signal-tag">HIGH SIGNAL · Ready to Reach</div>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-dot dot-mid"></div>
+        <div>
+          <div class="signal-company">Stoneleaf Provisions</div>
+          <div class="signal-detail">Website: bulk gifting page &nbsp;·&nbsp; Articles: featured in office culture roundup</div>
+          <div class="signal-tag">GOOD SIGNAL · Worth Reaching</div>
+        </div>
+      </div>
+      <div class="signal-row">
+        <div class="signal-dot dot-mid"></div>
+        <div>
+          <div class="signal-company">Vantara Hospitality Group</div>
+          <div class="signal-detail">LinkedIn: hiring event coordinator &nbsp;·&nbsp; Google: reviews mention corporate dinners</div>
+          <div class="signal-tag">GOOD SIGNAL · Outreach Ready</div>
+        </div>
+      </div>
+      <div class="hero-card-footer">
+        <div class="hcf-stat">
+          <div class="hcf-num">5,000</div>
+          <div class="hcf-label">Leads / Day</div>
+        </div>
+        <div class="hcf-stat">
+          <div class="hcf-num">3-Tier</div>
+          <div class="hcf-label">Signal System</div>
+        </div>
+        <div class="hcf-stat">
+          <div class="hcf-num">AI</div>
+          <div class="hcf-label">Personalized</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <div class="marquee-item"><span>Catering Companies</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Specialty Food Vendors</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Corporate Gifting Brands</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Restaurant Groups</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Artisan Food Producers</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Private Chefs &amp; Private Dining</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Hospitality Venues</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Beverage Companies</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Event Caterers</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Food Subscription Boxes</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Catering Companies</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Specialty Food Vendors</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Corporate Gifting Brands</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Restaurant Groups</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Artisan Food Producers</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Private Chefs &amp; Private Dining</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Hospitality Venues</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Beverage Companies</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Event Caterers</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Food Subscription Boxes</span><div class="marquee-dot"></div></div>
+  </div>
+</div>
+
+<!-- ── PROBLEM ── -->
+<section class="problem">
+  <div class="section-eyebrow">The Real Problem</div>
+  <h2 class="section-title">You have a great product.<br>Finding the right<br><em>corporate clients</em> is the hard part.</h2>
+  <div class="problem-grid">
+    <div class="problem-list">
+      <div class="problem-item">
+        <div class="prob-num">01</div>
+        <div>
+          <div class="prob-title">You've landed corporate clients — but you don't know how to find more</div>
+          <div class="prob-desc">A tech company found you through a referral. A nonprofit called out of nowhere. These are wins, but they're not a system. If you can't repeat it, it's just luck.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="prob-num">02</div>
+        <div>
+          <div class="prob-title">Word-of-mouth has a ceiling</div>
+          <div class="prob-desc">Referrals dry up. Corporate buyers change. Seasonal demand creates feast-or-famine cycles. Relying on word of mouth alone caps your growth and creates fragility.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="prob-num">03</div>
+        <div>
+          <div class="prob-title">Finding the right buyer — and the right person — takes time you don't have</div>
+          <div class="prob-desc">Not every company is the right fit. And even the right company has the wrong person if you don't know who controls the budget. That research takes time most owners don't have.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="prob-num">04</div>
+        <div>
+          <div class="prob-title">Generic outreach doesn't work</div>
+          <div class="prob-desc">Mass emails, cold calls, and LinkedIn messages get ignored when they're not relevant. Outreach that references something real — their actual clients, their events, their buying signals — is what gets replies. The channel doesn't matter. The relevance does.</div>
+        </div>
+      </div>
+    </div>
+    <div class="problem-right">
+      <div class="quotes-stack">
+
+        <div class="quote-card-v2">
+          <div class="quote-card-inner">
+            <div class="quote-icon">"</div>
+            <div class="quote-full-text">We don't know who to reach. It's super complicated — who makes the decisions and what they actually care about. We've tried reaching out before and heard nothing back.</div>
+            <div class="quote-role">Food & Beverage Brand Owner</div>
+          </div>
+        </div>
+
+        <div class="quote-card-v2">
+          <div class="quote-card-inner">
+            <div class="quote-icon">"</div>
+            <div class="quote-full-text">We have a great product and we know that. We just haven't figured out how to reach out to more companies. The clients we do have love us. We just can't seem to grow beyond our existing circle.</div>
+            <div class="quote-role">Catering Company Founder</div>
+          </div>
+        </div>
+
+        <div class="quote-card-v2">
+          <div class="quote-card-inner">
+            <div class="quote-icon">"</div>
+            <div class="quote-full-text">We don't have the time to build this ourselves — figuring out which buyers are the right fit, who we match best with, how to reach them. Quality matters to us. We want high-ROI outreach, not just volume.</div>
+            <div class="quote-role">Specialty Food Brand Owner</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="how-it-works">
+  <div class="section-eyebrow">The Process</div>
+  <h2 class="section-title">From zero pipeline<br>to <em>full calendar.</em></h2>
+  <p class="section-sub" style="margin-bottom:0">A systematic four-step process that turns your brand's story into a scalable corporate acquisition engine.</p>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Understanding Your Brand & Best-Fit Clients</div>
+      <div class="step-desc">We study your business — your product, positioning, aesthetic, and what makes you different. Then we look at your existing corporate clients to identify exactly what makes them the right fit, so we can find more just like them.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Finding Companies Ready to Buy</div>
+      <div class="step-desc">Our system checks up to 5,000 companies a day — their website, LinkedIn, Google, news, and more — to find the ones showing real signs they're looking for exactly what you offer.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">A Personalized Outreach System — On Every Channel</div>
+      <div class="step-desc">We build the outreach infrastructure across whichever channels perform best for your market — email, LinkedIn, phone calls, content, SEO, and your website. Every message is built around something real about that specific company. No templates. No guesswork.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Pipeline Activation & Iteration</div>
+      <div class="step-desc">We launch, measure reply rates, and continuously optimize. Your pipeline compounds over time — not resets each quarter.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO WE SERVE ── -->
+<section id="who-we-serve" class="icp-section">
+  <div class="section-eyebrow">Who We Serve</div>
+  <h2 class="section-title">Built for the <em>food &amp; hospitality</em> world.</h2>
+  <p class="section-sub">We work exclusively in food, beverage, and hospitality — so we know the buyers, the buying signals, and how to speak to them. If you sell to businesses, you're exactly who we built this for.</p>
+  <div class="icp-grid">
+
+    <div class="icp-card">
+      <div class="icp-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+      </div>
+      <div class="icp-title">Corporate Caterers</div>
+      <div class="icp-desc">You deliver exceptional food experiences. We find the HR directors, office managers, and event coordinators actively looking for exactly that — before they post an RFP.</div>
+      <div class="icp-examples">
+        <span class="icp-tag">Office Catering</span>
+        <span class="icp-tag">Event Caterers</span>
+        <span class="icp-tag">Meal Programs</span>
+        <span class="icp-tag">Private Dining</span>
+      </div>
+    </div>
+
+    <div class="icp-card">
+      <div class="icp-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+      </div>
+      <div class="icp-title">Specialty Food Vendors</div>
+      <div class="icp-desc">Artisan chocolates, premium cookies, specialty ingredients — if you have a product companies want to gift or serve, we build the pipeline to put it in front of them at scale.</div>
+      <div class="icp-examples">
+        <span class="icp-tag">Corporate Gifting</span>
+        <span class="icp-tag">Bulk Orders</span>
+        <span class="icp-tag">Branded Treats</span>
+        <span class="icp-tag">Holiday Programs</span>
+      </div>
+    </div>
+
+    <div class="icp-card">
+      <div class="icp-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="icp-title">Hospitality Venues</div>
+      <div class="icp-desc">From boutique hotels to private event spaces, we identify corporate accounts that book recurring team offsites, board dinners, and client entertainment year-round.</div>
+      <div class="icp-examples">
+        <span class="icp-tag">Event Venues</span>
+        <span class="icp-tag">Private Rooms</span>
+        <span class="icp-tag">Retreat Centers</span>
+        <span class="icp-tag">Hotel Groups</span>
+      </div>
+    </div>
+
+    <div class="icp-card">
+      <div class="icp-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      </div>
+      <div class="icp-title">Beverage & Wellness Brands</div>
+      <div class="icp-desc">Premium coffee subscriptions, wellness beverages, cold brew delivery — we find companies building office culture around premium beverage programs and connect you to them.</div>
+      <div class="icp-examples">
+        <span class="icp-tag">Office Coffee</span>
+        <span class="icp-tag">Wellness Programs</span>
+        <span class="icp-tag">Beverage Services</span>
+      </div>
+    </div>
+
+    <div class="icp-card">
+      <div class="icp-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="icp-title">Food Delivery & Subscription</div>
+      <div class="icp-desc">Meal kits, curated boxes, weekly delivery services — the corporate wellness and team-building market is massive and underserved. We help you penetrate it systematically.</div>
+      <div class="icp-examples">
+        <span class="icp-tag">Team Subscriptions</span>
+        <span class="icp-tag">Onboarding Kits</span>
+        <span class="icp-tag">Remote Teams</span>
+      </div>
+    </div>
+
+    <div class="icp-card">
+      <div class="icp-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <div class="icp-title">Private Chefs & Pop-Ups</div>
+      <div class="icp-desc">High-end culinary experiences for corporate entertainment, leadership offsites, and VIP client events. We identify the accounts with the budget and culture to say yes.</div>
+      <div class="icp-examples">
+        <span class="icp-tag">Executive Dining</span>
+        <span class="icp-tag">VIP Events</span>
+        <span class="icp-tag">Team Experiences</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── RESULTS ── -->
+<section id="results">
+  <div class="section-eyebrow">Results</div>
+  <h2 class="section-title">One corporate account<br>is worth <em>more than you think.</em></h2>
+  <p class="section-sub">The math is simple. A single recurring corporate client relationship can be worth $50K–$200K+ annually. We help you build a pipeline of them.</p>
+  <div class="results-grid">
+    <div class="stat-stack">
+      <div class="stat-item">
+        <div class="stat-num">100k+</div>
+        <div>
+          <div class="stat-label">Corporate buyers across F&B, hospitality & events</div>
+          <div class="stat-desc">The addressable market is enormous — F&B companies, hospitality venues, and event services combined. Our system finds which ones are actively looking for what you offer, right now.</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5k</div>
+        <div>
+          <div class="stat-label">Leads researched & scored per day</div>
+          <div class="stat-desc">Our system scans each company across their website, Google, LinkedIn, news, articles, and social media — building a complete picture of which ones are the right fit before you spend a minute on outreach.</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3×</div>
+        <div>
+          <div class="stat-label">Higher response vs. generic outreach</div>
+          <div class="stat-desc">Outreach that references something real — their clients, events, or business signals — consistently outperforms generic messages across every channel: email, LinkedIn, phone, and content.</div>
+        </div>
+      </div>
+    </div>
+    <div class="case-card" style="max-height: 520px; overflow-y: auto; scroll-behavior: smooth; position: relative;">
+      <div style="position: sticky; bottom: 0; left: 0; right: 0; height: 48px; background: linear-gradient(to top, rgba(15,13,10,0.9) 0%, transparent 100%); pointer-events: none; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 8px; z-index: 5; margin-top: -48px;">
+        <span style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: rgba(200,146,42,0.7); text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
+          scroll to read more ↓
+        </span>
+      </div>
+      <div class="case-header">
+        <div class="case-eyebrow">Client Case Study</div>
+        <div class="case-name">Premium Cookie Brand</div>
+        <div class="case-sub">Handmade Specialty Confections · Los Angeles</div>
+      </div>
+      <div class="case-clients">
+        <div class="case-clients-label">Notable Clients (Before the System)</div>
+        <div class="client-list">
+          <span class="client-chip">Major Tech Campuses</span>
+          <span class="client-chip">Sports Arenas</span>
+          <span class="client-chip">Presidential Libraries</span>
+          <span class="client-chip">Entertainment Venues</span>
+          <span class="client-chip">Convention Centers</span>
+        </div>
+      </div>
+      <div class="case-clients">
+        <div class="case-clients-label">The Challenge</div>
+        <div style="font-size:13px; color: rgba(250,248,243,0.6); line-height:1.75;">
+          Le Cordon Bleu-trained founder with enterprise F&B experience and a product proven at scale — but every B2B win had come through referrals. No pipeline. No outreach process. No way to replicate what was already working.
+        </div>
+      </div>
+      <div class="case-clients">
+        <div class="case-clients-label">What We Built</div>
+        <div style="font-size:13px; color: rgba(250,248,243,0.6); line-height:1.75;">
+          A full B2B go-to-market system: defined the four highest-value venue segments, mapped decision-makers by title and what each one cares about, built role-specific messaging, designed a 5-stage pipeline, and launched a multi-channel outreach strategy built around walking in with samples and following up with personalized, credible outreach.
+        </div>
+      </div>
+      <div class="case-clients">
+        <div class="case-clients-label">The Insight That Changed Everything</div>
+        <div style="font-size:13px; color: rgba(250,248,243,0.6); line-height:1.75; font-style: italic;">
+          "Not a cookie vendor — a premium experiential partner. The same product could be billed as a culinary line item to an F&B team, or a branded marketing moment to an event sales manager. Two budgets. One product. Positioning unlocks which one you access."
+        </div>
+      </div>
+      <div class="case-metrics">
+        <div class="cm-item">
+          <div class="cm-num">$60k+</div>
+          <div class="cm-label">B2B Revenue at Start</div>
+        </div>
+        <div class="cm-item">
+          <div class="cm-num">$180k</div>
+          <div class="cm-label">ARR Target</div>
+        </div>
+        <div class="cm-item">
+          <div class="cm-num">5-Stage</div>
+          <div class="cm-label">Pipeline Built</div>
+        </div>
+        <div class="cm-item">
+          <div class="cm-num">~$500/mo</div>
+          <div class="cm-label">Full Stack Cost</div>
+        </div>
+      </div>
+      <div class="case-clients" style="border-bottom: none;">
+        <div class="case-clients-label">Channels Activated</div>
+        <div class="client-list">
+          <span class="client-chip">Walk-in Sample Visits</span>
+          <span class="client-chip">Direct Phone</span>
+          <span class="client-chip">LinkedIn</span>
+          <span class="client-chip">Personalized Email</span>
+          <span class="client-chip">TikTok / Instagram</span>
+          <span class="client-chip">GoHighLevel CRM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TEAM ── -->
+<section id="team" class="team-section" style="text-align: center;">
+  <div class="section-eyebrow">Our Team</div>
+  <h2 class="section-title">Two partners. Senior expertise.<br><em>No layers.</em></h2>
+  <p class="section-sub" style="margin-left: auto; margin-right: auto; max-width: 560px;">Strategy, technology, and deep business expertise — all in one room. You work directly with the people who do the work.</p>
+  <div class="team-grid" style="grid-template-columns: 1fr 1fr; max-width: 760px; margin: 56px auto 0; text-align: left;">
+
+    <div class="team-card">
+      <div class="team-photo">
+        <div class="team-photo-placeholder">
+          <span class="team-initials">TK</span>
+        </div>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Teena Kunsoth</div>
+        <div class="team-role">Founding & Managing Partner</div>
+        <div class="team-bio">Ex-Silicon Valley tech operator. Bridges technology, strategy, and client delivery with deep experience helping founder-led businesses grow.</div>
+        <div class="team-links">
+          <a href="https://www.linkedin.com/in/teenakunsoth/" target="_blank" class="team-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card">
+      <div class="team-photo">
+        <div class="team-photo-placeholder">
+          <span class="team-initials">AR</span>
+        </div>
+      </div>
+      <div class="team-body">
+        <div class="team-name">Abby Rakshit</div>
+        <div class="team-role">Senior GTM Strategist · Ex-McKinsey</div>
+        <div class="team-bio">A decade of B2B go-to-market strategy, commercial transformation, and revenue architecture at the highest level.</div>
+        <div class="team-links">
+          <a href="https://www.linkedin.com/in/abbyrakshit/" target="_blank" class="team-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── BLOG ── -->
+<section id="blog" class="blog">
+  <div class="blog-header">
+    <div>
+      <div class="section-eyebrow">The Playbook</div>
+      <h2 class="section-title" style="margin-bottom:0">Learn the <em>system.</em></h2>
+    </div>
+    <a href="#" class="btn-ghost" onclick="showAllArticles(event)">All Articles →</a>
+  </div>
+  <div class="blog-grid">
+
+    <a class="blog-card featured" onclick="showArticle('article-fbindustry', event)" href="#">
+      <div class="blog-thumb">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#2a1f10 0%,#5c3d1e 40%,#c8922a 100%);display:flex;align-items:center;justify-content:center;">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.6)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+        </div>
+      </div>
+      <div class="blog-body">
+        <div class="blog-cat">Industry Intelligence</div>
+        <div class="blog-title">Breaking Into Corporate Events With AI — A Practical Guide</div>
+        <div class="blog-desc">Corporate events represent $112B in North American revenue. Most hospitality providers are leaving the majority of it on the table. Here's the map and the system to change that.</div>
+        <div class="blog-read">Read Article <span>→</span></div>
+      </div>
+    </a>
+
+    <a class="blog-card" onclick="showArticle('article-aileads', event)" href="#">
+      <div class="blog-thumb" style="background:linear-gradient(135deg,#0f1a2e 0%,#1a3a5c 60%,#2d6a9f 100%);justify-content:center;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.5)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <div class="blog-body">
+        <div class="blog-cat">AI & Technology</div>
+        <div class="blog-title">How AI Finds High-Quality Corporate Leads for Food Brands</div>
+        <div class="blog-desc">Not all leads are equal. AI-powered signal detection separates companies actively buying from those that never will.</div>
+        <div class="blog-read">Read Article <span>→</span></div>
+      </div>
+    </a>
+
+    <a class="blog-card" onclick="showArticle('article-aitools', event)" href="#">
+      <div class="blog-thumb" style="background:linear-gradient(135deg,#1a1a2e 0%,#2d2d5e 60%,#4a4a8a 100%);">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.5)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div class="blog-body">
+        <div class="blog-cat">Problem Solving</div>
+        <div class="blog-title">Using AI as a Thinking Tool — Not Just an Automation Tool</div>
+        <div class="blog-desc">The difference between founders who win with AI and those who don't: problem-first thinking before tool deployment.</div>
+        <div class="blog-read">Read Article <span>→</span></div>
+      </div>
+    </a>
+
+    <a class="blog-card" onclick="showArticle('article-casestudy1', event)" href="#">
+      <div class="blog-thumb" style="background:linear-gradient(135deg,#1e0a00 0%,#5c2010 60%,#b84c1e 100%);">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.5)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div class="blog-body">
+        <div class="blog-cat">Case Study</div>
+        <div class="blog-title">From Accidental Clients to a Repeatable System</div>
+        <div class="blog-desc">How a premium cookie brand built the infrastructure to replicate their best corporate wins — systematically.</div>
+        <div class="blog-read">Read Article <span>→</span></div>
+      </div>
+    </a>
+
+    <a class="blog-card" onclick="showArticle('article-casestudy2', event)" href="#">
+      <div class="blog-thumb" style="background:linear-gradient(135deg,#0a1e0a 0%,#1e4a1e 60%,#4a6741 100%);">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.5)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="blog-body">
+        <div class="blog-cat">Case Study</div>
+        <div class="blog-title">Building a 5,000-Lead-Per-Day Enrichment Pipeline</div>
+        <div class="blog-desc">A technical walkthrough of how we built an AI lead generation system — from data export to personalized cold email, in days.</div>
+        <div class="blog-read">Read Article <span>→</span></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ── OFFER ── -->
+<section id="offer" class="offer-section">
+  <div class="offer-inner">
+    <div>
+      <div class="section-eyebrow">Get Started</div>
+      <h2 class="section-title">See what a real<br>pipeline looks <em>like.</em></h2>
+      <p class="section-sub">We'll hand you 50 high-quality, personalized leads — matched to your product, your location, and the kinds of corporate clients you already work with. No pitch. No commitment.</p>
+      <p style="margin-top: 28px; font-size: 13px; color: rgba(250,248,243,0.35); font-family: 'DM Mono', monospace; letter-spacing: 0.04em;">If the list works → you'll want the full system.<br>If it doesn't → you've lost nothing.</p>
+    </div>
+    <div class="offer-box">
+      <div class="offer-label">What You Get — Free</div>
+      <div class="offer-title">50 Qualified Corporate Leads + Personalized Outreach Messages</div>
+      <div class="offer-list">
+        <div class="offer-item">
+          <div class="offer-check">✓</div>
+          <div>50 companies that match your product and your existing corporate clients — researched across their website, LinkedIn, Google, and news</div>
+        </div>
+        <div class="offer-item">
+          <div class="offer-check">✓</div>
+          <div>A personalized outreach message for each one — referencing something real about their business, not a generic template</div>
+        </div>
+        <div class="offer-item">
+          <div class="offer-check">✓</div>
+          <div>A signal score for each lead so you know who's most ready to buy and who to contact first</div>
+        </div>
+        <div class="offer-item">
+          <div class="offer-check">✓</div>
+          <div>A clear angle for how to position yourself — based on your strengths and the clients you've already won</div>
+        </div>
+      </div>
+      <div class="offer-cta-stack">
+        <a href="https://forms.gle/FjbbRSvrBuBU38BY7" target="_blank" class="btn-gold">Get My Free Lead List <span>→</span></a>
+        <div class="offer-cta-note">Delivered within 24–48 hours · No credit card · No sales call required</div>
+        <a href="https://calendar.app.google/uxSthyqBCJopb4nq9" target="_blank" class="offer-audit-link">Prefer to talk first? Book a 20-min strategy call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">Kunsoth <span>AI</span></div>
+      <div class="footer-desc">Corporate client acquisition infrastructure for food, beverage, and hospitality brands. We turn remarkable products into systematic B2B pipelines.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <div class="footer-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#who-we-serve">Who We Serve</a>
+        <a href="#results">Results</a>
+        <a href="#team">Team</a>
+        <a href="https://forms.gle/FjbbRSvrBuBU38BY7" target="_blank">Get Free Leads</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Resources</div>
+      <div class="footer-links">
+        <a href="#" onclick="showArticle('article-fbindustry', event)">F&B Industry Guide</a>
+        <a href="#" onclick="showArticle('article-aileads', event)">AI Lead Generation</a>
+        <a href="#" onclick="showArticle('article-casestudy1', event)">Case Study</a>
+        <a href="#" onclick="showAllArticles(event)">All Articles</a>
+        <a href="https://forms.gle/dFCb2n324R918TJj7" target="_blank">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Kunsoth AI. All rights reserved.</span>
+    <span>Built for F&amp;B · Powered by AI</span>
+  </div>
+</footer>
+
+</div><!-- end #main-site -->
+
+
+<!-- ══════════════════════════ ALL ARTICLES PAGE ══════════════════════════ -->
+<div id="all-articles-page" class="all-articles-page">
+  <div class="all-articles-hero">
+    <a href="#" class="article-back" onclick="showMain(event)">← Back to Home</a>
+    <div class="article-cat">The Playbook</div>
+    <h1 class="article-headline">All Articles</h1>
+    <p class="article-sub">Frameworks, case studies, and intelligence for F&B brands building systematic corporate pipelines.</p>
+  </div>
+  <div class="all-articles-grid">
+
+    <a class="blog-card" onclick="showArticle('article-fbindustry', event)" href="#">
+      <div class="blog-thumb" style="height:160px;background:linear-gradient(135deg,#2a1f10 0%,#5c3d1e 40%,#c8922a 100%);justify-content:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.6)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+      </div>
+      <div class="blog-body">
+        <div class="blog-cat">Industry Intelligence</div>
+        <div class="blog-title">Breaking Into Corporate Events With AI</div>
+        <div class="blog-desc">The $112B opportunity most hospitality providers are ignoring — and how to capture it.</div>
+        <div class="blog-read">Read Article <span>→</span></div>
+      </div>
+    </a>
+
+    <a class="blog-card" onclick="showArticle('article-aileads', event)" href="#">
+      <div class="blog-thumb" style="height:160px;background:linear-gradient(135deg,#0f1a2e 0%,#1a3a5c 60%,#2d6a9f 100%);justify-content:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.5)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <div class="blog-body">
+        <div class="blog-cat">AI & Technology</div>
+        <div class="blog-title">How AI Finds High-Quality Corporate Leads for Food Brands</div>
+        <div class="blog-desc">Signal detection that separates real buyers from noise.</div>
+        <div class="blog-read">Read Article <span>→</span></div>
+      </div>
+    </a>
+
+    <a class="blog-card" onclick="showArticle('article-aitools', event)" href="#">
+      <div class="blog-thumb" style="height:160px;background:linear-gradient(135deg,#1a1a2e 0%,#2d2d5e 60%,#4a4a8a 100%);justify-content:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.5)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div class="blog-body">
+        <div class="blog-cat">Problem Solving</div>
+        <div class="blog-title">Using AI as a Thinking Tool — Not Just an Automation Tool</div>
+        <div class="blog-desc">Problem-first thinking before tool deployment.</div>
+        <div class="blog-read">Read Article <span>→</span></div>
+      </div>
+    </a>
+
+    <a class="blog-card" onclick="showArticle('article-casestudy1', event)" href="#">
+      <div class="blog-thumb" style="height:160px;background:linear-gradient(135deg,#1e0a00 0%,#5c2010 60%,#b84c1e 100%);justify-content:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.5)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div class="blog-body">
+        <div class="blog-cat">Case Study</div>
+        <div class="blog-title">From Accidental Clients to a Repeatable System</div>
+        <div class="blog-desc">How a premium food brand built the infrastructure to replicate their best wins.</div>
+        <div class="blog-read">Read Article <span>→</span></div>
+      </div>
+    </a>
+
+    <a class="blog-card" onclick="showArticle('article-casestudy2', event)" href="#">
+      <div class="blog-thumb" style="height:160px;background:linear-gradient(135deg,#0a1e0a 0%,#1e4a1e 60%,#4a6741 100%);justify-content:center;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.5)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="blog-body">
+        <div class="blog-cat">Case Study</div>
+        <div class="blog-title">Building a 5,000-Lead-Per-Day Enrichment Pipeline</div>
+        <div class="blog-desc">From data export to personalized cold email, in days.</div>
+        <div class="blog-read">Read Article <span>→</span></div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════ ARTICLE PAGES ══════════════════════════ -->
+
+<!-- Article 1 -->
+<div id="article-fbindustry" class="article-page">
+  <div class="article-hero">
+    <a href="#" class="article-back" onclick="showAllArticles(event)">← All Articles</a>
+    <div class="article-cat">Industry Intelligence</div>
+    <h1 class="article-headline">Breaking Into Corporate Events With AI — A Practical Guide</h1>
+    <p class="article-sub">The corporate events market is worth $112 billion in North America alone. Most hospitality providers are leaving the majority of it on the table.</p>
+    <div class="article-meta">10 min read · Teena Kunsoth, Kunsoth AI</div>
+  </div>
+  <div style="width:100%;height:380px;background:linear-gradient(135deg,#2a1f10 0%,#5c3d1e 40%,#c8922a 100%);display:flex;align-items:center;justify-content:center;">
+    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.4)" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+  </div>
+  <div class="article-body">
+    <p>Corporate events attract hosts and attendees with the highest spending power in the country. Information Technology and Pharma are the top industries investing in experiential events — yet a large number of hospitality providers model their revenue almost entirely around weddings and social events. They are leaving an enormous amount of money on the table.</p>
+    <h2>How Big Is the Opportunity?</h2>
+    <p>The global events industry is projected to reach $2.1 trillion by 2032, with corporate events driving most of that growth. North America alone represented $112 billion in corporate events revenue in 2025, with a 13%+ annual growth rate projected through 2031. This is not a niche. It is one of the largest recurring revenue opportunities available to food and hospitality providers.</p>
+    <h2>Why It Feels Complicated</h2>
+    <p>At first glance, corporate events can seem daunting. The scale, the quality expectations, and the multi-stakeholder decision-making process are genuinely more complex than consumer catering. For a specialty vendor trying to break in, the question isn't just "who do I call?" — it's understanding the entire chain of gatekeepers.</p>
+    <p>Large venues don't typically run their own food operations. They partner with large foodservice management companies — Sodexo, Aramark, Compass, Levy, Delaware North — who control all catering on-site. That makes the catering partner the operational gatekeeper, not the venue itself. As events grow in scale, corporate clients increasingly hire event production companies who become the people determining which vendors even make the shortlist.</p>
+    <blockquote><p>"At every level, you are navigating a small group of decision-makers — and it is rarely just one person."</p></blockquote>
+    <h2>The Decision-Maker Problem</h2>
+    <p>One of the biggest reasons standard outreach fails in this environment is that vendors approach the wrong person with the wrong message. A General Manager cares about compliance and operational risk. A Culinary Director cares about product quality and kitchen integration. An Event Sales Manager cares about client delight and differentiation. A Director of F&B cares about revenue and ease. The same product needs to be framed completely differently for each.</p>
+    <h2>How to Actually Get In</h2>
+    <p>The foundation is relationships, not transactions. When you approach a venue or event producer, you are not pitching a product — you are pitching a long-term partnership. Once you prove yourself at that level, your reputation compounds. That is why corporate clients are one of the most reliable and recurring sources of revenue in this industry.</p>
+    <p>What separates those who get on the shortlist from those who don't often comes down to three things: whether you show up as a trustworthy operational partner, whether you bring genuine added value beyond the product itself, and whether you educate your buyers on what you can actually do for them. Most event planners don't know they can use a gourmet dessert vendor as a marketing asset. It's your job to show them.</p>
+    <h2>How AI Amplifies All of This</h2>
+    <p>The principle is simple: first understand how to solve the problem manually and accurately, then use AI to do it at scale. AI won't replace the relationship — it will help you find the right relationships faster and show up to them better prepared.</p>
+    <p>That means using AI to identify companies actively hiring event managers (a reliable buying signal), finding events listed on platforms like Eventbrite before venues are locked, analyzing your best existing clients to build a targeting framework, and generating personalized outreach at scale that references what you actually know about that specific company. The vendors who learn to do this will outrun their competitors by an order of magnitude.</p>
+    <a href="https://forms.gle/FjbbRSvrBuBU38BY7" target="_blank" class="btn-primary" style="margin-top:32px;display:inline-flex;">Get 50 Free Leads From Your Target Market <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- Article 2 -->
+<div id="article-aileads" class="article-page">
+  <div class="article-hero">
+    <a href="#" class="article-back" onclick="showAllArticles(event)">← All Articles</a>
+    <div class="article-cat">AI & Technology</div>
+    <h1 class="article-headline">How AI Finds High-Quality Corporate Leads for Food Brands</h1>
+    <p class="article-sub">Not all leads are equal. AI-powered signal detection separates companies actively buying from those that never will.</p>
+    <div class="article-meta">6 min read · Kunsoth AI</div>
+  </div>
+  <div style="width:100%;height:380px;background:linear-gradient(135deg,#0f1a2e 0%,#1a3a5c 60%,#2d6a9f 100%);display:flex;align-items:center;justify-content:center;">
+    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.4)" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+  </div>
+  <div class="article-body">
+    <p>The traditional approach to lead generation for food brands is either entirely passive (word of mouth, referrals, inbound inquiries) or entirely untargeted (cold lists purchased from data brokers, spray-and-pray email blasts). Neither produces predictable results.</p>
+    <h2>What Signal Detection Actually Means</h2>
+    <p>AI signal detection is the practice of using machine learning to identify behavioral and content-based indicators that a company is likely to purchase a specific product or service. For F&B brands, the most valuable signals live on company websites — in the language they use, the pages they've built, and the clients they reference.</p>
+    <p>A catering company with a dedicated "Corporate Events" page, tiered pricing, and a 48-hour response commitment isn't just a catering company. They're signaling active investment in corporate acquisition infrastructure. That's a HIGH signal — worth reaching out to immediately, with a personalized message that references what you actually saw.</p>
+    <h2>The Three-Tier System</h2>
+    <p>Our pipeline classifies every lead into one of three signal tiers:</p>
+    <ul>
+      <li><strong>HIGH</strong> — Named corporate clients found on the website. These leads get hyper-personalized outreach referencing their actual clients.</li>
+      <li><strong>MEDIUM</strong> — Clear B2B language but no named clients. Personalized outreach referencing their operational signals.</li>
+      <li><strong>LOW</strong> — No meaningful B2B signal. Templated outreach testing basic positioning.</li>
+    </ul>
+    <h2>Why Personalization at Scale Changes Everything</h2>
+    <p>Generic cold email gets ignored. Personalized email that references something real about the recipient's business — their actual clients, their specific programs, their operational setup — gets opened, read, and replied to at 3× the rate. The signal tier determines what level of personalization is possible and cost-justified.</p>
+    <a href="#offer" onclick="showMain(event)" class="btn-primary" style="margin-top:32px;display:inline-flex;">See It In Action — Get 50 Free Leads <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- Article 3 -->
+<div id="article-aitools" class="article-page">
+  <div class="article-hero">
+    <a href="#" class="article-back" onclick="showAllArticles(event)">← All Articles</a>
+    <div class="article-cat">Problem Solving</div>
+    <h1 class="article-headline">Using AI as a Thinking Tool — Not Just an Automation Tool</h1>
+    <p class="article-sub">The difference between founders who win with AI and those who don't: problem-first thinking before tool deployment.</p>
+    <div class="article-meta">5 min read · Kunsoth AI</div>
+  </div>
+  <div style="width:100%;height:380px;background:linear-gradient(135deg,#1a1a2e 0%,#2d2d5e 60%,#4a4a8a 100%);display:flex;align-items:center;justify-content:center;">
+    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.4)" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  </div>
+  <div class="article-body">
+    <p>Most businesses that fail with AI do so not because the technology doesn't work, but because they deploy it without first articulating exactly what problem they're solving. AI is a multiplier — it amplifies whatever input you give it. Vague inputs produce vague outputs.</p>
+    <h2>The Problem-First Framework</h2>
+    <p>Before deploying any AI tool, the question isn't "what can AI do for us?" It's "what specific outcome do we need, and what inputs would reliably produce that outcome?" This inversion — starting from the desired output and working backward — is what separates strategic AI adoption from expensive experimentation.</p>
+    <blockquote><p>"The bottleneck is almost never the AI. It's the clarity of the brief."</p></blockquote>
+    <h2>Applied to Lead Generation</h2>
+    <p>When we built the Kunsoth pipeline, the problem statement was precise: given a list of company names and websites, identify which ones have active B2B purchase signals, classify the signal strength, and generate a personalized outreach message that references only verified facts. Every architectural decision — the signal tiers, the verbatim extraction rules, the email structure — flows directly from that problem statement.</p>
+    <p>The output quality is a direct function of problem clarity. Founders who invest time in defining the problem precisely before touching any tooling consistently outperform those who reach for AI first and define the problem later.</p>
+    <a href="#offer" onclick="showMain(event)" class="btn-primary" style="margin-top:32px;display:inline-flex;">Start With 50 Free Leads <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- Article 4 -->
+<div id="article-casestudy1" class="article-page">
+  <div class="article-hero">
+    <a href="#" class="article-back" onclick="showAllArticles(event)">← All Articles</a>
+    <div class="article-cat">Case Study</div>
+    <h1 class="article-headline">From Accidental Clients to a Repeatable System</h1>
+    <p class="article-sub">How a premium specialty food brand built the infrastructure to replicate their best corporate wins — systematically.</p>
+    <div class="article-meta">7 min read · Kunsoth AI</div>
+  </div>
+  <div style="width:100%;height:380px;background:linear-gradient(135deg,#1e0a00 0%,#5c2010 60%,#b84c1e 100%);display:flex;align-items:center;justify-content:center;">
+    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.4)" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+  </div>
+  <div class="article-body">
+    <p>When we first spoke with this client — a premium handmade cookie brand based in Los Angeles — they had something most early-stage food brands spend years trying to build: a roster of recognizable corporate clients. Major tech platforms, entertainment venues, cultural institutions. All won through referrals and word of mouth.</p>
+    <h2>The Problem Beneath the Surface</h2>
+    <p>The wins looked impressive from the outside. But internally, the business had no idea how to replicate them. There was no process for identifying which companies were likely to become clients, no outreach system, no way to predict when the next big account would come in — or if it would come at all.</p>
+    <p>The business was operating on borrowed time. Every quarter depended on the next referral materializing. That's not a pipeline. That's a prayer.</p>
+    <blockquote><p>"We had all the proof we needed — recognizable clients, a premium product, repeat orders. What we didn't have was a system."</p></blockquote>
+    <h2>Building the System</h2>
+    <p>We started by reverse-engineering the existing client roster. What did the companies that said yes have in common? What signals — public, detectable signals — were visible on their websites before they became clients? Those signals became the foundation of the ICP definition.</p>
+    <p>From there, we built the enrichment pipeline: sourcing, scraping, classifying, scoring, and writing personalized outreach at scale. Within weeks, the brand had a structured, reproducible process for identifying and reaching the right buyers — not waiting for them to find their way in through referrals.</p>
+    <a href="#offer" onclick="showMain(event)" class="btn-primary" style="margin-top:32px;display:inline-flex;">Build Your System — Start With Free Leads <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- Article 5 -->
+<div id="article-casestudy2" class="article-page">
+  <div class="article-hero">
+    <a href="#" class="article-back" onclick="showAllArticles(event)">← All Articles</a>
+    <div class="article-cat">Case Study</div>
+    <h1 class="article-headline">Building a 5,000-Lead-Per-Day Enrichment Pipeline</h1>
+    <p class="article-sub">A technical and strategic walkthrough of how we built an AI lead generation system — from data export to personalized cold email, in days.</p>
+    <div class="article-meta">10 min read · Kunsoth AI</div>
+  </div>
+  <div style="width:100%;height:380px;background:linear-gradient(135deg,#0a1e0a 0%,#1e4a1e 60%,#4a6741 100%);display:flex;align-items:center;justify-content:center;">
+    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(250,248,243,0.4)" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+  </div>
+  <div class="article-body">
+    <p>The brief was straightforward: take a raw list of food and beverage companies, visit each website, determine if they're a viable B2B prospect, and write a personalized cold email for each one that passes the filter. At 5,000 leads per day.</p>
+    <h2>The Architecture</h2>
+    <p>The pipeline runs in three stages. First, scraping: for each company, we attempt to retrieve up to 8 pages of website content using a sitemap-first approach — maximizing signal quality while minimizing cost. When a site can't be scraped, a web search fallback retrieves public information about the company.</p>
+    <p>Second, extraction: a fast, efficient AI model reads the scraped content and extracts structured data — business type, signal tier, named clients (verbatim only), B2B summary, and notable features. Strict extraction rules prevent hallucination: if a client name doesn't appear word-for-word in the content, it doesn't get included.</p>
+    <p>Third, email writing: for HIGH and MEDIUM signal leads, a more capable model writes a personalized cold email using only the verified extracted data. The email references real signals, real clients, and real operational details — nothing inferred, nothing invented.</p>
+    <h2>The Cost</h2>
+    <p>The full pipeline — scraping, extraction, and email writing — runs at approximately $0.014 per lead all-in. At 5,000 leads per day, that's roughly $70/day, or $2,100/month for a fully operational AI-powered corporate acquisition system.</p>
+    <blockquote><p>"The goal was never to automate outreach. It was to make personalization economically viable at scale."</p></blockquote>
+    <a href="#offer" onclick="showMain(event)" class="btn-primary" style="margin-top:32px;display:inline-flex;">See the System — Get 50 Free Leads <span class="arr">→</span></a>
+  </div>
+</div>
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── NAV ──
+function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  const btn = document.getElementById('hamburger');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMobileNav() {
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+
+// ── PAGE ROUTING ──
+function hideAll() {
+  document.getElementById('main-site').classList.add('hidden');
+  document.getElementById('all-articles-page').classList.remove('active');
+  document.querySelectorAll('.article-page').forEach(p => p.classList.remove('active'));
+}
+
+function showMain(e) {
+  if (e) e.preventDefault();
+  hideAll();
+  document.getElementById('main-site').classList.remove('hidden');
+  closeMobileNav();
+  // If there's a hash, scroll to it after a tick
+  const href = e && e.currentTarget ? e.currentTarget.getAttribute('href') : '';
+  if (href && href.startsWith('#') && href.length > 1) {
+    setTimeout(() => {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function showAllArticles(e) {
+  if (e) e.preventDefault();
+  hideAll();
+  document.getElementById('all-articles-page').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'page_view', { page_title: 'All Articles', page_location: window.location.href + '#all-articles' });
+  }
+}
+
+const articleTitles = {
+  'article-fbindustry': 'Breaking Into Corporate Events With AI — A Practical Guide',
+  'article-aileads': 'How AI Finds High-Quality Corporate Leads for Food Brands',
+  'article-aitools': 'Using AI as a Thinking Tool — Not Just an Automation Tool',
+  'article-casestudy1': 'From Accidental Clients to a Repeatable System',
+  'article-casestudy2': 'Building a 5,000-Lead-Per-Day Enrichment Pipeline'
+};
+
+function showArticle(id, e) {
+  if (e) e.preventDefault();
+  hideAll();
+  const page = document.getElementById(id);
+  if (page) page.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (typeof gtag !== 'undefined') {
+    const title = articleTitles[id] || id;
+    gtag('event', 'page_view', { page_title: title, page_location: window.location.href + '#' + id });
+    gtag('event', 'article_view', { article_id: id, article_title: title });
+  }
+}
+</script>
+</body>
+</html>

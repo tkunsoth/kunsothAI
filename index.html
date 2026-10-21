@@ -72,6 +72,14 @@
   .links a{opacity:.8}
   .links a:hover{opacity:1}
   .nav .btn{justify-self:end;padding:11px 18px;font-size:13px}
+  .nav{transition:background-color .4s ease,color .4s ease,border-color .4s ease,transform .35s ease}
+  .nav.hide{transform:translateY(-100%)}
+  .nav .kmark rect,.nav .kmark path{transition:fill .4s ease,stroke .4s ease}
+  .nav.dark{background:rgba(14,14,14,.55);color:var(--white);border-bottom-color:rgba(255,255,255,.14);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%)}
+  .nav.dark .kmark rect{fill:var(--white)}
+  .nav.dark .kmark path{stroke:var(--ink)}
+  .nav.dark .btn-dark{background:var(--white);color:var(--ink);border-color:var(--white)}
+  .nav.dark .btn-dark:hover{background:#E6E6E6}
 
   /* hero bands */
   .bands{position:relative}
@@ -106,11 +114,19 @@
   .glow .ctas .btn-line:hover{background:var(--ink);color:var(--white)}
 
   /* stats */
-  .stats{display:grid;grid-template-columns:repeat(3,1fr)}
-  .stat{padding:28px var(--pad) 30px;border-right:1px solid var(--line)}
-  .stat:last-child{border-right:0}
-  .stat b{display:block;font:600 clamp(40px,4.4vw,64px)/1 var(--display);letter-spacing:-.05em}
-  .stat span{display:block;margin-top:10px;font-size:13px;color:var(--muted)}
+  .stats{display:grid;grid-template-columns:1.8fr 1fr;grid-template-rows:1.15fr 1fr;min-height:clamp(250px,23vw,330px);border-bottom:1px solid var(--line)}
+  .stat{padding:clamp(18px,2vw,28px) var(--pad);display:flex;flex-direction:column;justify-content:flex-end}
+  .stat.s1{grid-column:1;grid-row:1;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stat.s2{grid-column:1;grid-row:2;border-right:1px solid var(--line)}
+  .stat.s3{grid-column:2;grid-row:1 / 3}
+  .stat b{display:block;font:600 clamp(40px,3.8vw,60px)/.9 var(--display);letter-spacing:-.055em;font-variant-numeric:tabular-nums}
+  .stat.s1 b{font-size:clamp(56px,6.2vw,96px)}
+  .stat.s3 b{font-size:clamp(48px,5vw,80px)}
+  .stat span{display:inline-block;align-self:flex-start;margin-top:12px;padding:3px 7px;font-size:13.5px;line-height:1.2;background:var(--ink);color:var(--white)}
+
+  /* graph-paper gap between the stats and services */
+  .gridfill{height:clamp(72px,9vw,128px);background-image:linear-gradient(to right,rgba(14,14,14,.12) 1px,transparent 1px),linear-gradient(to bottom,rgba(14,14,14,.12) 1px,transparent 1px);background-size:.5cm .5cm}
+  #services{padding-top:0}
 
   /* section frame */
   .sec{padding-top:clamp(72px,9vw,128px)}
@@ -119,12 +135,21 @@
   .glitch{position:relative;display:inline-block}
   .glitch::before,.glitch::after{content:attr(data-text);position:absolute;inset:0;pointer-events:none;opacity:0;white-space:nowrap;
     background:linear-gradient(90deg,#FF4D7E,#FFB23F,#3FE08B,#3FB8FF,#B14DFF);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .glitch::before{animation:glA 7s steps(1,end) infinite var(--gd,0s)}
-  .glitch::after{background:linear-gradient(90deg,#3FB8FF,#B14DFF,#FF4D7E,#FFB23F,#3FE08B);-webkit-background-clip:text;background-clip:text;animation:glB 7s steps(1,end) infinite var(--gd,0s)}
-  @keyframes glA{0%,90%,100%{opacity:0;transform:none;clip-path:none}91%{opacity:.95;transform:translate(-2px,0);clip-path:inset(0 0 55% 0)}93%{opacity:.95;transform:translate(1px,0);clip-path:inset(50% 0 0 0)}95%{opacity:0}}
-  @keyframes glB{0%,91%,100%{opacity:0;transform:none;clip-path:none}92%{opacity:.8;transform:translate(2px,0);clip-path:inset(35% 0 20% 0)}94%{opacity:.8;transform:translate(-1px,0);clip-path:inset(0 0 60% 0)}96%{opacity:0}}
-  .sec-top:hover .glitch::before{animation-duration:1.2s}
-  .sec-top:hover .glitch::after{animation-duration:1.2s}
+  .glitch{animation:glBase 3.2s steps(1,end) infinite var(--gd,0s)}
+  .glitch::before{animation:glA 3.2s steps(1,end) infinite var(--gd,0s)}
+  .glitch::after{background:linear-gradient(90deg,#3FB8FF,#B14DFF,#FF4D7E,#FFB23F,#3FE08B);-webkit-background-clip:text;background-clip:text;animation:glB 3.2s steps(1,end) infinite var(--gd,0s)}
+  @keyframes glA{0%,78%,100%{opacity:0;transform:none;clip-path:none}79%{opacity:1;transform:translate(-5px,0);clip-path:inset(0 0 55% 0)}82%{opacity:1;transform:translate(4px,0);clip-path:inset(50% 0 0 0)}85%{opacity:1;transform:translate(-3px,1px);clip-path:inset(25% 0 35% 0)}88%{opacity:1;transform:translate(6px,0);clip-path:inset(0 0 70% 0)}90%{opacity:0}94%{opacity:1;transform:translate(-4px,0);clip-path:inset(60% 0 0 0)}96%{opacity:0}}
+  @keyframes glB{0%,79%,100%{opacity:0;transform:none;clip-path:none}80%{opacity:.9;transform:translate(5px,0);clip-path:inset(35% 0 20% 0)}83%{opacity:.9;transform:translate(-4px,-1px);clip-path:inset(0 0 60% 0)}86%{opacity:.9;transform:translate(3px,0);clip-path:inset(55% 0 5% 0)}89%{opacity:0}95%{opacity:.9;transform:translate(4px,0);clip-path:inset(10% 0 55% 0)}97%{opacity:0}}
+  @keyframes glBase{0%,79%,100%{transform:none}81%{transform:translateX(2px)}84%{transform:translateX(-2px) skewX(-8deg)}87%{transform:translateX(1px)}89%{transform:none}95%{transform:translateX(-1px) skewX(6deg)}97%{transform:none}}
+  .sec-top:hover .glitch,.sec-top:hover .glitch::before,.sec-top:hover .glitch::after{animation-duration:1.1s}
+  .glitch.xl{animation-name:glBaseXL;animation-duration:4s}
+  .glitch.xl::before{animation-name:glAXL;animation-duration:4s}
+  .glitch.xl::after{animation-name:glBXL;animation-duration:4s}
+  .glitch.xl::before{-webkit-mask-image:repeating-linear-gradient(to bottom,#000 0 1px,transparent 1px 3px);mask-image:repeating-linear-gradient(to bottom,#000 0 1px,transparent 1px 3px)}
+  .glitch.xl::after{-webkit-mask-image:repeating-linear-gradient(to bottom,#000 0 1px,transparent 1px 4px);mask-image:repeating-linear-gradient(to bottom,#000 0 1px,transparent 1px 4px)}
+  @keyframes glAXL{0%,80%,100%{opacity:0;transform:none;clip-path:none}81%{opacity:1;transform:translate(-10px,0);-webkit-mask-position:0 0px;mask-position:0 0px;clip-path:inset(0 0 30% 0)}83%{opacity:1;transform:translate(8px,0);-webkit-mask-position:0 4px;mask-position:0 4px;clip-path:inset(20% 0 10% 0)}85%{opacity:1;transform:translate(-6px,0);-webkit-mask-position:0 7px;mask-position:0 7px;clip-path:inset(40% 0 0 0)}87%{opacity:1;transform:translate(12px,0);-webkit-mask-position:0 2px;mask-position:0 2px;clip-path:inset(8% 0 35% 0)}89%{opacity:0}96%{opacity:1;transform:translate(-8px,0);-webkit-mask-position:0 5px;mask-position:0 5px;clip-path:none}98%{opacity:0}}
+  @keyframes glBXL{0%,81%,100%{opacity:0;transform:none;clip-path:none}82%{opacity:.9;transform:translate(10px,0);-webkit-mask-position:0 3px;mask-position:0 3px;clip-path:inset(10% 0 20% 0)}84%{opacity:.9;transform:translate(-12px,0);-webkit-mask-position:0 1px;mask-position:0 1px;clip-path:inset(0 0 40% 0)}86%{opacity:.9;transform:translate(7px,0);-webkit-mask-position:0 5px;mask-position:0 5px;clip-path:inset(30% 0 0 0)}88%{opacity:0}97%{opacity:.9;transform:translate(9px,0);-webkit-mask-position:0 2px;mask-position:0 2px;clip-path:inset(15% 0 15% 0)}99%{opacity:0}}
+  @keyframes glBaseXL{0%,81%,100%{transform:none}83%{transform:translateX(3px)}86%{transform:translateX(-4px) skewX(-3deg)}89%{transform:none}97%{transform:translateX(-2px)}99%{transform:none}}
   .title-band{min-height:var(--band);display:flex;align-items:center;border-bottom:1px solid var(--line);padding-top:12px;padding-bottom:12px}
   .title-band .word{font-size:calc(var(--band)*.6);white-space:normal;line-height:.98}
   .intro{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
@@ -134,13 +159,30 @@
   .tag{display:inline-flex;align-items:center;height:28px;padding:0 12px;border:1px solid var(--line);border-radius:999px;font:500 12px/1 var(--sans)}
 
   /* services */
-  .svc-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
-  .svc{padding:clamp(28px,3.4vw,52px) var(--pad);display:flex;flex-direction:column}
+  .svc-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-bottom:1px solid var(--line)}
+  .svc{--sp:clamp(28px,3.4vw,52px);padding:var(--sp) var(--pad);display:flex;flex-direction:column}
+  .ticker{contain:inline-size;min-width:0;position:relative;overflow:hidden;height:58px;margin:36px calc(var(--pad) * -1) calc(var(--sp) * -1);background:#D6D6D6;color:var(--ink);display:flex;align-items:center}
+  .ticker > .fx{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}
+  .ticker-track{position:relative;z-index:1;display:flex;align-items:center;width:max-content;animation:tick 28s linear infinite}
+  .ticker-track span{font:700 17px/1 var(--display);letter-spacing:-.01em;white-space:nowrap;padding:0 24px;color:var(--ink);text-shadow:0 0 8px #fff,0 0 3px #fff}
+  .ticker-track i{width:7px;height:7px;background:var(--ink);flex:0 0 auto}
+  @keyframes tick{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  .svc:first-child .ticker-track{animation-direction:reverse}
   .svc + .svc{border-left:1px solid var(--line)}
   .svc.tint{background:var(--paper)}
+  .svc{position:relative}
+  .peel{--ps:clamp(100px,8.4vw,120px);position:absolute;top:0;right:0;width:var(--ps);height:var(--ps);pointer-events:none;z-index:2}
+  .peel-under,.peel-flap{position:absolute;inset:0;clip-path:polygon(100% 0,100% 0,100% 0);transition:clip-path .55s cubic-bezier(.2,.8,.2,1)}
+  .peel-under{background:var(--ink)}
+  .peel-under b{position:absolute;top:16px;right:14px;font:600 12.5px/1 var(--sans);color:var(--white);white-space:nowrap;opacity:0;transition:opacity .25s ease .2s}
+  .peel-shade{position:absolute;inset:0;filter:drop-shadow(-3px 4px 5px rgba(0,0,0,.28))}
+  .peel-flap{background:linear-gradient(45deg,#FFFFFF 0%,#F1F1F1 30%,#DADADA 50%)}
+  .svc:hover .peel-under,.svc:focus-within .peel-under{clip-path:polygon(0 0,100% 0,100% 100%)}
+  .svc:hover .peel-flap,.svc:focus-within .peel-flap{clip-path:polygon(0 0,100% 100%,0 100%)}
+  .svc:hover .peel-under b,.svc:focus-within .peel-under b{opacity:1}
   .svc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
   .svc-head .node{--node:72px}
-  .svc h3{margin-top:36px;font-size:clamp(40px,4.4vw,64px)}
+  .svc h3{margin-top:clamp(36px,3.4vw,48px);font-size:clamp(40px,4.4vw,64px)}
   .svc .tl{margin-top:12px;font:500 17px/1.35 var(--display);letter-spacing:-.02em}
   .svc .desc{margin-top:16px;color:var(--muted);max-width:32em}
   .svc ul{list-style:none;margin:32px 0 0;padding:0;border-top:1px solid var(--hair)}
@@ -188,8 +230,8 @@
   .steps li{display:flex;gap:16px;align-items:center;padding:12px 0;border-top:1px solid rgba(14,14,14,.18);font-size:14.5px}
   .steps li:last-child{border-bottom:1px solid rgba(14,14,14,.18)}
   .steps li span{flex:0 0 28px;height:28px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;font:500 12px/1 var(--sans)}
-  .gform{background:var(--white);border-radius:14px;overflow:hidden;box-shadow:0 40px 80px -48px rgba(14,14,14,.55);height:min(700px,80vh)}
-  .gform iframe{display:block;width:100%;height:100%;border:0}
+  .opt-label{color:var(--muted);font-weight:400}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
   form{background:var(--white);border-radius:14px;padding:clamp(24px,3vw,40px);box-shadow:0 40px 80px -48px rgba(14,14,14,.55)}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   .field{margin-bottom:14px}
@@ -225,7 +267,7 @@
   .rise.in{opacity:1;transform:none}
   .node.pop{transform:scale(.6);opacity:0;transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .5s,background-color .8s ease}
   .node.pop.in{transform:none;opacity:1}
-  @media (prefers-reduced-motion:reduce){.rise,.node.pop{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.node svg{transition:none}.node.live svg{animation:none}.glitch::before,.glitch::after{animation:none}}
+  @media (prefers-reduced-motion:reduce){.rise,.node.pop{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.node svg{transition:none}.node.live svg{animation:none}.glitch,.glitch::before,.glitch::after{animation:none}.ticker-track{animation:none}}
 
   /* responsive */
   @media (max-width:1080px){
@@ -245,11 +287,13 @@
     .bands .node,.bands .capsule,.wires{display:none}
     .word{font-size:calc(var(--band)*.66)}
     .title-band .word{font-size:calc(var(--band)*.5)}
-    .stats{grid-template-columns:1fr}
-    .stat{border-right:0;border-bottom:1px solid var(--line)}
-    .stat:last-child{border-bottom:0}
+    .stats{grid-template-columns:1fr;grid-template-rows:none;min-height:0}
+    .stat{min-height:120px}
+    .stat.s1,.stat.s2,.stat.s3{grid-column:1;grid-row:auto;border-right:0;border-bottom:1px solid var(--line)}
+    .stat.s3{border-bottom:0}
     .member{grid-template-columns:1fr}
     .two{grid-template-columns:1fr;gap:0}
+    .svc h3{margin-top:84px}
     .giant{font-size:17vw}
     .glow .ctas .btn{width:100%;justify-content:center}
   }
@@ -258,7 +302,7 @@
 <body>
 
 
-<header class="nav rule-b">
+<header class="nav rule-b" id="nav">
   <div class="nav-in pad">
     <a href="#top" class="brand" aria-label="Kunsoth AI home"><svg class="kmark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#0E0E0E"/><path d="M9.6 7.4v13.2 M19.6 7.4l-6.1 6.1 M15.3 15.1l4.6 5.5" fill="none" stroke="#FFFFFF" stroke-width="2.3" stroke-linecap="round"/></svg>Kunsoth AI</a>
     <nav class="links" aria-label="Primary">
@@ -299,7 +343,7 @@
     <div class="glow" data-fx="hero">
       <canvas class="fx" aria-hidden="true"></canvas>
       <div>
-        <p class="rise pitch">Keeping your pipeline full is essential, but closing active deals takes priority. Kunsoth AI sources high-intent, off-market opportunities tailored precisely to your target criteria and delivers qualified owner conversations directly to you without adding to your workload.</p>
+        <p class="rise pitch">Kunsoth AI sources high-intent, off-market opportunities tailored precisely to your target criteria and delivers qualified owner conversations directly to you without adding to your workload.</p>
         <div class="ctas rise">
           <a href="#demo" class="btn btn-dark">Book a demo</a>
           <a href="#services" class="btn btn-line play"><i></i>How it works</a>
@@ -307,65 +351,48 @@
       </div>
     </div>
 
-    <div class="stats rule-b">
-      <div class="stat"><b>25</b><span>Meetings a month</span></div>
-      <div class="stat"><b>0</b><span>Hours of supervision once it's running</span></div>
-      <div class="stat"><b>24/7</b><span>Sourcing in the background while you close</span></div>
+    <div class="stats">
+      <div class="stat s1"><b data-from="0" data-to="25" data-suffix="+">25+</b><span>Meetings a month</span></div>
+      <div class="stat s2"><b data-from="40" data-to="0">0</b><span>Hours of supervision once it's running</span></div>
+      <div class="stat s3"><b data-from="00/0" data-to="24" data-suffix="/7" data-mode="scramble">24/7</b><span>Sourcing in the background while you close</span></div>
     </div>
   </section>
 
   <!-- SERVICES -->
+  <div class="gridfill" aria-hidden="true"></div>
   <section class="sec" id="services">
     <div class="sec-top pad rule-t"><b class="glitch" data-text="(01) Services">(01) Services</b><span class="glitch" data-text="Two ways to work with us">Two ways to work with us</span></div>
     <div class="title-band pad rule-t">
       <h2 class="word">What we offer</h2>
     </div>
-    <div class="intro">
-      <div><p>Hand us the whole process, or run your own sourcing agent.</p></div>
-      <div><p>Either way, the companies come from beyond the databases, and every owner is verified at the source.</p></div>
-    </div>
 
     <div class="svc-grid">
       <article class="svc tint">
-        <div class="svc-head">
-          <span class="tag">We run it</span>
-          <span class="node"><svg viewBox="0 0 24 24"><path d="M4 6h16v15H4Z M4 10.5h16 M8.5 3v5 M15.5 3v5 M8 14.5h3 M8 17.5h3 M13.5 14.5h3"/></svg></span>
-        </div>
+        <span class="peel" aria-hidden="true"><span class="peel-under"><b>We run it</b></span><span class="peel-shade"><span class="peel-flap"></span></span></span>
         <h3>Done For You</h3>
         <p class="tl">You take the meetings. We do everything before them.</p>
         <p class="desc">We build your target profile with you, source the companies, verify every owner, run outreach in your name, and send interested owners straight to your calendar.</p>
         <ul>
           <li>Target profile built around your thesis or territory</li>
-          <li>Companies sourced beyond PitchBook and Apollo</li>
-          <li>Every owner verified on the company's own website</li>
-          <li>Outreach written and sent in your name</li>
-          <li>Interested owners routed to your calendar</li>
+          <li>Off-market companies sourced from our proprietary systems, beyond PitchBook and Apollo</li>
+          <li>Built-in timing signals that flag owners when they're most likely to sell</li>
         </ul>
-        <div class="svc-foot">
-          <small>Best for teams that want meetings, not another tool.</small>
-          <a href="#demo" class="btn btn-dark">Talk to us</a>
-        </div>
+        <div class="svc-foot"><a href="#demo" class="btn btn-dark">Talk to us</a></div>
+        <div class="ticker" data-fx="tick"><canvas class="fx" aria-hidden="true"></canvas><p class="sr-only">Best for teams that want meetings, not another tool.</p><div class="ticker-track" aria-hidden="true"><span>Best for teams that want meetings, not another tool.</span><i></i><span>Best for teams that want meetings, not another tool.</span><i></i><span>Best for teams that want meetings, not another tool.</span><i></i><span>Best for teams that want meetings, not another tool.</span><i></i><span>Best for teams that want meetings, not another tool.</span><i></i><span>Best for teams that want meetings, not another tool.</span><i></i></div></div>
       </article>
 
       <article class="svc">
-        <div class="svc-head">
-          <span class="tag">You own it</span>
-          <span class="node"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18Z M12 7.5a4.5 4.5 0 1 0 0 9a4.5 4.5 0 1 0 0-9Z M12 11.2a.8.8 0 1 0 0 1.6a.8.8 0 1 0 0-1.6Z"/></svg></span>
-        </div>
+        <span class="peel" aria-hidden="true"><span class="peel-under"><b>You own it</b></span><span class="peel-shade"><span class="peel-flap"></span></span></span>
         <h3>Done With You</h3>
-        <p class="tl">Your own agent. It runs on its own.</p>
-        <p class="desc">Describe who you want to reach in plain language. Your sourcing agent finds the companies, finds the owners, sends the emails, and tells you when someone is interested.</p>
+        <p class="tl">Your own agent, running on autopilot.</p>
+        <p class="desc">Describe who you want to reach. Your sourcing agent finds the companies, finds the owners, sends the emails, and tells you when someone is interested.</p>
         <ul>
-          <li>Plain-language targeting, no filters to learn</li>
-          <li>Runs in the background, every day</li>
-          <li>A live list of companies and verified owners</li>
-          <li>Outreach sent from your own inbox</li>
-          <li>Set up with you, around your criteria</li>
+          <li>Plain-language targeting, no filters or tools to learn</li>
+          <li>A continuously refreshed pipeline of companies and verified owners</li>
+          <li>Learns and adapts as your criteria evolve</li>
         </ul>
-        <div class="svc-foot">
-          <small>Best for teams that want to own their sourcing engine.</small>
-          <a href="#demo" class="btn btn-line">See a demo</a>
-        </div>
+        <div class="svc-foot"><a href="#demo" class="btn btn-line">See a demo</a></div>
+        <div class="ticker" data-fx="tick"><canvas class="fx" aria-hidden="true"></canvas><p class="sr-only">Best for teams that want their own always-on sourcing engine.</p><div class="ticker-track" aria-hidden="true"><span>Best for teams that want their own always-on sourcing engine.</span><i></i><span>Best for teams that want their own always-on sourcing engine.</span><i></i><span>Best for teams that want their own always-on sourcing engine.</span><i></i><span>Best for teams that want their own always-on sourcing engine.</span><i></i><span>Best for teams that want their own always-on sourcing engine.</span><i></i><span>Best for teams that want their own always-on sourcing engine.</span><i></i></div></div>
       </article>
     </div>
     <div class="for"><span>Built for</span><span class="tag">Private equity</span><span class="tag">M&amp;A advisors</span><span class="tag">Business brokers</span><span class="tag">Firms that sell to companies</span></div>
@@ -412,9 +439,31 @@
         </div>
       </div>
 
-      <div class="gform">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScp9FtN0zLgi9tpDT7Zeg0K2yRRqD6BN0mwI4ClGlfm64j2VA/viewform?embedded=true" title="Book a demo with Kunsoth AI" loading="lazy">Loading…</iframe>
-      </div>
+      <form id="demo-form" novalidate>
+        <div class="two">
+          <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-company">Company</label><input id="f-company" name="company" autocomplete="organization" required></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-phone">Phone <span class="opt-label">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <fieldset>
+          <span class="legend">Interested in</span>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="interest" value="Done For You" checked><span>Done For You</span></label>
+            <label class="choice"><input type="radio" name="interest" value="Done With You"><span>Done With You</span></label>
+            <label class="choice"><input type="radio" name="interest" value="Not sure yet"><span>Not sure yet</span></label>
+          </div>
+        </fieldset>
+        <div class="field"><label for="f-reach">Who do you want to reach?</label><input id="f-reach" name="who_to_reach" placeholder="e.g. Founder-owned HVAC companies in Texas, $2–10M revenue" required></div>
+        <div class="hp" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="form-foot">
+          <small>We reply within one business day.</small>
+          <button type="submit" class="btn btn-dark">Request a demo</button>
+        </div>
+        <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 
@@ -429,12 +478,25 @@
       <a href="#demo">Book a demo</a>
     </nav>
   </div>
-  <div class="giant pad" aria-hidden="true">Kunsoth AI</div>
+  <div class="giant pad" aria-hidden="true"><span class="glitch xl" data-text="Kunsoth AI">Kunsoth AI</span></div>
   <div class="fine pad"><span>© <span id="yr">2026</span> Kunsoth AI</span><span>Deal sourcing for PE, M&amp;A and brokers</span></div>
 </footer>
 
 <script>
   document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Top bar turns dark as soon as you scroll off the top of the hero.
+  const nav = document.getElementById("nav");
+  // It also slides away while scrolling down and comes back on scroll up.
+  let lastY = window.scrollY;
+  const navTone = () => {
+    const y = window.scrollY;
+    nav.classList.toggle("dark", y > 40);
+    if (Math.abs(y - lastY) > 4) { nav.classList.toggle("hide", y > lastY && y > 120); lastY = y; }
+  };
+  nav.addEventListener("focusin", () => nav.classList.remove("hide"));
+  window.addEventListener("scroll", navTone, { passive: true });
+  navTone();
 
   // Draw the arrows between hero nodes.
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -470,13 +532,14 @@
   if (!calm) {
     const order = ["n-target", "n-company", "n-owner", "n-search", "n-verify", "n-mail", "n-reply", "n-meet"];
     let k = -1, prev = null;
-    setTimeout(() => setInterval(() => {
+    const step = () => {
       const live = order.map((id) => document.getElementById(id)).filter((n) => n && n.offsetParent);
       if (!live.length) return;
       k = (k + 1) % live.length;
       if (prev) prev.classList.remove("live");
       prev = live[k]; prev.classList.add("live");
-    }, 900), 1600);
+    };
+    setTimeout(() => { step(); setInterval(step, 900); }, 350);
   }
 
   // Pixel + glitch field behind the glow bands: dithered greys, slice jitter, occasional bursts.
@@ -486,7 +549,7 @@
     const ctx = cv.getContext("2d"), off = document.createElement("canvas"), octx = off.getContext("2d");
     const B = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5].map((v) => (v + 0.5) / 16);
     const LV = [255, 240, 214, 168, 104, 38], n = LV.length - 1;
-    let cols = 1, rows = 1, img, seed, cw = 1, ch = 1, rx = o.rx, ry = o.ry, burstUntil = 0, nextBurst = 9000, last = 0, on = true;
+    let cols = 1, rows = 1, img, seed, cw = 1, ch = 1, rx = o.rx, ry = o.ry, burstUntil = 0, nextBurst = o.firstBurst ?? 9000, last = 0, on = true;
     // HSL (h in degrees, s/l 0..1) to RGB bytes.
     const hsl = (h, sat, l) => {
       const a = sat * Math.min(l, 1 - l), f = (m) => { const k = (m + h / 30) % 12; return 255 * (l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1))); };
@@ -507,7 +570,7 @@
         const dy = (y / rows - o.cy) / ry;
         for (let x = 0; x < cols; x++) {
           const dx = (x / cols - cx) / rx, p = y * cols + x, k = p * 4;
-          const v = Math.pow(Math.min(1, Math.hypot(dx, dy)), o.gamma) * o.dark * n;
+          const v = o.flat != null ? o.flat * n : Math.pow(Math.min(1, Math.hypot(dx, dy)), o.gamma) * o.dark * n;
           let i = Math.floor(v) + ((v % 1) > B[(y & 3) * 4 + (x & 3)] ? 1 : 0);
           if (!still && Math.random() < o.noise) i += Math.random() < 0.5 ? -1 : 1;
           i = Math.max(0, Math.min(n, i));
@@ -526,8 +589,8 @@
       ctx.imageSmoothingEnabled = false;
       ctx.drawImage(off, 0, 0, cv.width, cv.height);
       if (still) return;
-      if (t > nextBurst) { burstUntil = t + 80 + Math.random() * 60; nextBurst = t + 17500 + Math.random() * 22500; }
-      const burst = t < burstUntil, slices = burst ? 1 + ((Math.random() * 2) | 0) : (Math.random() < 0.016 ? 1 : 0);
+      if (t > nextBurst) { burstUntil = t + 80 + Math.random() * 60; nextBurst = t + (o.burstMin ?? 17500) + Math.random() * (o.burstSpan ?? 22500); }
+      const burst = t < burstUntil, slices = burst ? 1 + ((Math.random() * 2) | 0) : (Math.random() < (o.idle ?? 0.016) ? 1 : 0);
       for (let k = 0; k < slices; k++) {
         const sy = (Math.random() * rows) | 0, sh = 1 + ((Math.random() * (burst ? 2 : 1)) | 0);
         const shift = (((Math.random() * 2 - 1) * (burst ? 4 : 2)) | 0) * cw;
@@ -550,10 +613,82 @@
     (function loop(t) { requestAnimationFrame(loop); if (!on || t - last < 70) return; last = t; draw(t, false); })(0);
   }
   pixelField(document.querySelector('[data-fx="hero"]'), { cy: 0, rx: 0.55, ry: 1.25, rxN: 1.15, ryN: 1.35, gamma: 1.6, dark: 0.95, noise: 0.0008, rainbow: 0.07 });
+  document.querySelectorAll('[data-fx="tick"]').forEach((h) => pixelField(h, { cy: 0.5, rx: 1, ry: 1, rxN: 1, ryN: 1, gamma: 1, dark: 1, flat: 0.45, noise: 0.004, rainbow: 0.12, idle: 0.06, firstBurst: 1500, burstMin: 2500, burstSpan: 3500 }));
   pixelField(document.querySelector('[data-fx="demo"]'), { cy: 0, rx: 0.75, ry: 1.7, rxN: 1.4, ryN: 2.2, gamma: 1.5, dark: 0.55, noise: 0.0006, rainbow: 0.05 });
 
   // Stagger the header glitches so they don't fire together.
-  document.querySelectorAll(".glitch").forEach((el) => el.style.setProperty("--gd", `-${(Math.random() * 7).toFixed(2)}s`));
+  document.querySelectorAll(".glitch").forEach((el) => el.style.setProperty("--gd", `-${(Math.random() * 3.2).toFixed(2)}s`));
+
+  // Footer wordmark: hold the glitch until the footer is on screen, then burst right away (and on every return).
+  const wordmark = document.querySelector(".giant .glitch");
+  if (wordmark && !calm && "IntersectionObserver" in window && wordmark.getAnimations) {
+    wordmark.style.setProperty("--gd", "0s");
+    const anims = () => wordmark.getAnimations({ subtree: true });
+    anims().forEach((a) => a.pause());
+    new IntersectionObserver(([e]) => {
+      anims().forEach((a) => { if (e.isIntersecting) { a.currentTime = 3150; a.play(); } else a.pause(); });
+    }, { threshold: 0.35 }).observe(wordmark);
+  }
+
+  // Stat counters: run once when the stats strip scrolls into view.
+  const counters = document.querySelectorAll(".stat b[data-to]");
+  function count(el) {
+    const a = +el.dataset.from, b = +el.dataset.to, suf = el.dataset.suffix || "", dur = 1600;
+    const scramble = el.dataset.mode === "scramble", rnd = (lo, hi) => lo + ((Math.random() * (hi - lo + 1)) | 0);
+    let t0 = null, lastSwap = 0;
+    const step = (t) => {
+      t0 = t0 ?? t;
+      const p = Math.min(1, (t - t0) / dur);
+      if (scramble) {
+        // Random readings that settle on the final value.
+        if (p === 1) el.textContent = b + suf;
+        else if (t - lastSwap > 60) { lastSwap = t; el.textContent = String(rnd(0, 99)).padStart(2, "0") + "/" + rnd(0, 9); }
+      } else {
+        const v = Math.round(a + (b - a) * (1 - Math.pow(1 - p, 3)));
+        el.textContent = v + (p === 1 ? suf : "");
+      }
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  if (!calm && counters.length && "IntersectionObserver" in window) {
+    counters.forEach((el) => { el.textContent = el.dataset.from; });
+    const co = new IntersectionObserver((es) => {
+      if (!es.some((e) => e.isIntersecting)) return;
+      co.disconnect();
+      counters.forEach((el, i) => setTimeout(() => count(el), i * 150));
+    }, { threshold: 0.4 });
+    co.observe(document.querySelector(".stats"));
+  }
+
+  // Demo form: posts to the Instantly automation webhook (which pings Slack).
+  // The hook only allows CORS from Instantly's own domains, so send a "simple" text/plain request (no preflight).
+  const HOOK = "https://hooks.instantly.ai/api/v2/automation/hooks/3ec891d5-255d-44f3-a4b6-c2e823e12136";
+  const form = document.getElementById("demo-form");
+  const msg = document.getElementById("form-msg");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    msg.className = "form-msg";
+    if (!form.checkValidity()) { msg.textContent = "Please fill in your name, company, work email and who you want to reach."; return; }
+    const data = Object.fromEntries(new FormData(form));
+    const done = () => { form.reset(); msg.className = "form-msg ok"; msg.textContent = "Thank you. We'll be in touch within one business day."; };
+    if (data.website) { done(); return; } // spam trap: bots fill the hidden field
+    delete data.website;
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; msg.textContent = "Sending…";
+    try {
+      await fetch(HOOK, {
+        method: "POST", mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=UTF-8" },
+        body: JSON.stringify({ ...data, source: "kunsoth.ai demo form", page: location.href, submitted_at: new Date().toISOString() }),
+      });
+      done();
+    } catch {
+      msg.textContent = "Something went wrong. Please try again in a moment.";
+    } finally {
+      btn.disabled = false;
+    }
+  });
 
   // Reveal on scroll.
   const io = "IntersectionObserver" in window ? new IntersectionObserver((es) => {

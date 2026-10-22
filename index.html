@@ -705,7 +705,14 @@
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     msg.className = "form-msg";
-    if (!form.checkValidity()) { msg.textContent = "Please fill in your name, company, work email and who you want to reach."; return; }
+    if (!form.checkValidity()) {
+      const bad = form.querySelector(":invalid");
+      msg.textContent = bad.type === "email" && bad.value.trim()
+        ? "Please enter a valid work email, like name@company.com."
+        : "Please fill in your name, company, work email and who you want to reach.";
+      bad.focus();
+      return;
+    }
     const data = Object.fromEntries(new FormData(form));
     const done = () => { form.reset(); msg.className = "form-msg ok"; msg.textContent = "Thank you. We'll be in touch within one business day."; };
     if (data.website) { done(); return; } // spam trap: bots fill the hidden field

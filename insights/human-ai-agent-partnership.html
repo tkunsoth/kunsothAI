@@ -148,6 +148,11 @@
   .stage b{font-size:var(--n)}
   /* hover / focus: compare against the industry */
   .cmpcard{cursor:default;outline:none}
+  /* mobile has no hover, so the benchmark sits beside the number there */
+  .stage .num{display:flex;align-items:flex-end;gap:8px;margin-top:auto;padding-top:20px}
+  .stage .num b{margin-top:0;padding-top:0}
+  .stage .avg{display:none}
+  .cmpcard.cmp .avg{visibility:hidden}
   .cmpcard:focus-visible{outline:2px solid #8A8A8A;outline-offset:-4px}
   .cmpcard.cmp .k{background:#BDBDBD;color:var(--white)}
   .cmpcard b{transition:font-size .6s cubic-bezier(.2,.8,.2,1),color .4s ease}
@@ -194,14 +199,10 @@
   .vtrack{height:var(--bh);margin-top:calc(var(--n) * .18)}
   .vbar{display:block;height:100%;width:var(--c);min-width:4px;background:#8A8A8A;border-radius:0 4px 4px 0;transition:width .8s cubic-bezier(.2,.8,.2,1),background-color .4s ease}
   .vcard.swap .vbar{width:var(--a);background:var(--ink)}
-  .vs.anim:not(.in) .vbar{width:0}
+  .vs.anim:not(.in) .vbar,.vs.anim:not(.in) .mtrack i{width:0}
+  .mbars{display:none}
   .vcard > b{display:block;font:600 var(--n)/.85 var(--display);letter-spacing:-.05em}
   .vcard .k{display:inline-block;align-self:flex-start;margin-top:10px;padding:.22em .5em;font-size:max(11px,calc(var(--n) * .3));line-height:1.15;white-space:nowrap;background:var(--ink);color:var(--white)}
-  .vs-table{padding:10px calc(var(--g) + var(--cpad)) 12px;font-size:13.5px}
-  .vs-table summary{cursor:pointer;color:var(--muted)}
-  .vs-table table{margin-top:12px;border-collapse:collapse;width:100%}
-  .vs-table th,.vs-table td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--hair);font-variant-numeric:tabular-nums}
-  .vs-table thead th{font-weight:600;color:var(--muted)}
 
   /* deep-dive teaser */
   .teaser{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:clamp(28px,3vw,44px) var(--pad);border-bottom:1px solid var(--line);background:var(--paper)}
@@ -217,13 +218,19 @@
   .foot nav a{opacity:.75}
   .fine{padding-top:16px;padding-bottom:22px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
 
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cmpcard b{transition:none}.peel-under,.peel-flap,.peel-under b{transition:none}.vbar{transition:none}.fn .dot,.fn .dot svg{transition:none}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cmpcard b{transition:none}.peel-under,.peel-flap,.peel-under b{transition:none}.vbar,.mtrack i{transition:none}.fn .dot,.fn .dot svg{transition:none}}
   @media (max-width:880px){
     .links{display:none}
     .nav-in{grid-template-columns:1fr auto}
   }
   @media (max-width:720px){
     .vs-grid{grid-template-columns:1fr;grid-template-rows:none;min-height:0}
+    /* mobile: no peel or hover swap; show both bars with values on the right */
+    .vs-grid .peel,.vs-grid .vtop,.vs-grid .vcard > b,.vs-grid .vtrack{display:none}
+    .mbars{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 10px;width:100%}
+    .mtrack i{display:block;height:12px;min-width:4px;border-radius:0 4px 4px 0;background:#8A8A8A;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+    .mtrack.ag i{background:var(--ink)}
+    .mval{font:600 15px/1 var(--display);letter-spacing:-.01em;white-space:nowrap;text-align:right}
     .split{grid-template-columns:1fr}
     .split > div + div{border-left:0;border-top:1px solid var(--line)}
     .lane{grid-template-columns:repeat(4,1fr);row-gap:18px;padding:24px 0}
@@ -240,6 +247,7 @@
     .funnel-h,.vs-head{padding-left:14px;padding-right:14px}
     .page .vs-head{padding-left:var(--pad);padding-right:var(--pad)}
     .stage .k{font-size:max(11px,calc(var(--n) * .2))}
+    .stage .avg{display:block;padding-bottom:1px;font:500 10.5px/1.2 var(--sans);letter-spacing:0;color:#9A9A9A}
     .stage:nth-child(2){border-right:0}
     .stage:nth-child(-n+2){border-bottom:1px solid var(--line)}
   }
@@ -336,8 +344,8 @@
       <div class="funnel-h pad"><h2 id="results-title">Results <span class="h2-note">vs industry benchmarks</span></h2><span class="per"><em>3</em> months</span></div>
       <div class="stages">
         <div class="stage st1"><b>1,699</b><span class="k">Unique businesses reached</span></div>
-        <div class="stage st2 cmpcard" tabindex="0" aria-label="Reply rate 10.4%, industry average 5%"><b data-alt="5%">10.4%</b><span class="k" data-alt="Industry average">Reply rate</span></div>
-        <div class="stage st3 cmpcard" tabindex="0" aria-label="Positive replies 27%, industry average 14%"><b data-alt="14%">27%</b><span class="k" data-alt="Industry average">Positive replies</span></div>
+        <div class="stage st2 cmpcard" tabindex="0" aria-label="Reply rate 10.4%, industry average 5%"><div class="num"><b data-alt="5%">10.4%</b><span class="avg" aria-hidden="true">Industry<br>avg 5%</span></div><span class="k" data-alt="Industry average">Reply rate</span></div>
+        <div class="stage st3 cmpcard" tabindex="0" aria-label="Positive replies 27%, industry average 14%"><div class="num"><b data-alt="14%">27%</b><span class="avg" aria-hidden="true">Industry<br>avg 14%</span></div><span class="k" data-alt="Industry average">Positive replies</span></div>
         <div class="stage st4"><b>48</b><span class="k">Meetings booked</span></div>
       </div>
     </section>
@@ -357,6 +365,7 @@
           <div class="vtop"><span class="who" data-alt="Agent">Manual</span></div>
           <b data-alt="52 min">2,791 min</b>
           <div class="vtrack"><span class="vbar"></span></div>
+          <div class="mbars" aria-hidden="true"><span class="mtrack"><i style="width:var(--c)"></i></span><span class="mval">2,791 min</span><span class="mtrack ag"><i style="width:var(--a)"></i></span><span class="mval">52 min</span></div>
           <span class="k">Time to source 500 contacts</span>
         </div>
         <div class="panel p2 vcard" tabindex="0" style="--c:100%;--a:6.85%" aria-label="Cost for 500 contacts: manual $232.56, agent $15.92. 15× cheaper.">
@@ -364,6 +373,7 @@
           <div class="vtop"><span class="who" data-alt="Agent">Manual</span></div>
           <b data-alt="$15.92">$232.56</b>
           <div class="vtrack"><span class="vbar"></span></div>
+          <div class="mbars" aria-hidden="true"><span class="mtrack"><i style="width:var(--c)"></i></span><span class="mval">$232.56</span><span class="mtrack ag"><i style="width:var(--a)"></i></span><span class="mval">$15.92</span></div>
           <span class="k">Cost for 500 contacts</span>
         </div>
         <div class="panel p3 vcard" tabindex="0" style="--c:1.86%;--a:100%" aria-label="Contacts sourced per hour: manual 10.8 per hour, agent 580 per hour. 54× the rate.">
@@ -371,19 +381,10 @@
           <div class="vtop"><span class="who" data-alt="Agent">Manual</span></div>
           <b data-alt="580 / hr">10.8 / hr</b>
           <div class="vtrack"><span class="vbar"></span></div>
+          <div class="mbars" aria-hidden="true"><span class="mtrack"><i style="width:var(--c)"></i></span><span class="mval">10.8 / hr</span><span class="mtrack ag"><i style="width:var(--a)"></i></span><span class="mval">580 / hr</span></div>
           <span class="k">Contacts sourced per hour</span>
         </div>
         </div>
-        <details class="vs-table"><summary>View as table</summary>
-          <table>
-            <thead><tr><th></th><th>Manual</th><th>Agent</th><th>Delta</th></tr></thead>
-            <tbody>
-              <tr><th>Time for 500 contacts</th><td>2,791 min (46.5 hrs)</td><td>52 min</td><td>54× faster</td></tr>
-              <tr><th>Rate</th><td>10.8 contacts/hour</td><td>580 contacts/hour</td><td>54×</td></tr>
-              <tr><th>Cost for 500</th><td>$232.56</td><td>$15.92</td><td>15× cheaper</td></tr>
-            </tbody>
-          </table>
-        </details>
       </div>
     </section>
     </div></div>

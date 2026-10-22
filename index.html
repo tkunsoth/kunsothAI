@@ -126,7 +126,19 @@
 
   /* graph-paper gap between the stats and services */
   .gridfill{height:clamp(72px,9vw,128px);background-image:linear-gradient(to right,rgba(14,14,14,.12) 1px,transparent 1px),linear-gradient(to bottom,rgba(14,14,14,.12) 1px,transparent 1px);background-size:.5cm .5cm}
-  #services,#team{padding-top:0}
+  #services,#team,#insights{padding-top:0}
+
+  /* insights feature card */
+  .feature{display:grid;grid-template-columns:1.5fr 1fr;border-bottom:1px solid var(--line);transition:background .3s}
+  .feature:hover{background:var(--paper)}
+  .feature-copy{padding:clamp(28px,3.4vw,52px) var(--pad);display:flex;flex-direction:column;align-items:flex-start}
+  .feature-copy h3{margin-top:22px;font-size:clamp(30px,3.4vw,48px);letter-spacing:-.04em;line-height:1.02;max-width:16em}
+  .feature-copy p{margin-top:16px;color:var(--muted);max-width:34em}
+  .feature-link{margin-top:28px;font:500 14px/1 var(--sans);display:inline-flex;gap:.5em;padding-bottom:6px;border-bottom:1px solid currentColor}
+  .feature:hover .arrow{transform:translateX(4px)}
+  .feature-stat{border-left:1px solid var(--line);padding:clamp(20px,2.4vw,32px) var(--pad);display:flex;flex-direction:column;justify-content:flex-end;background-image:linear-gradient(to right,rgba(14,14,14,.12) 1px,transparent 1px),linear-gradient(to bottom,rgba(14,14,14,.12) 1px,transparent 1px);background-size:.5cm .5cm}
+  .feature-stat b{font:600 clamp(96px,12vw,180px)/.85 var(--display);letter-spacing:-.06em}
+  .feature-stat span{display:inline-block;align-self:flex-start;margin-top:12px;padding:3px 7px;font-size:13.5px;line-height:1.2;background:var(--ink);color:var(--white)}
 
   /* section frame */
   .sec{padding-top:clamp(72px,9vw,128px)}
@@ -281,6 +293,8 @@
     .posts{grid-template-columns:1fr}
     .post{min-height:0}
     .post + .post{border-left:0;border-top:1px solid var(--line)}
+    .feature{grid-template-columns:1fr}
+    .feature-stat{border-left:0;border-top:1px solid var(--line);min-height:200px}
   }
   @media (max-width:720px){
     :root{--band:clamp(64px,17vw,96px)}
@@ -308,6 +322,7 @@
     <nav class="links" aria-label="Primary">
       <a href="#services">Services</a>
       <a href="#team">Team</a>
+      <a href="#insights">Insights</a>
       <a href="#demo">Contact</a>
     </nav>
     <a href="#demo" class="btn btn-dark">Book a demo</a>
@@ -429,6 +444,24 @@
 
   <!-- DEMO -->
   <div class="gridfill" aria-hidden="true"></div>
+  <!-- INSIGHTS -->
+  <section class="sec" id="insights">
+    <div class="sec-top pad rule-t"><b class="glitch" data-text="(03) Insights">(03) Insights</b><span class="glitch" data-text="Case studies and field notes">Case studies and field notes</span></div>
+    <div class="title-band pad rule-t">
+      <h2 class="word">Insights on AI</h2>
+    </div>
+    <a class="feature" href="insights/human-ai-agent-partnership.html">
+      <div class="feature-copy">
+        <span class="tag">Case study</span>
+        <h3>The human–AI agent partnership that booked 48 demos in 3 months</h3>
+        <p>How a product that only spread by word of mouth became a weekly meeting engine, with people making the calls and an agent doing the legwork.</p>
+        <span class="feature-link">Read the case study <span class="arrow" aria-hidden="true">→</span></span>
+      </div>
+      <div class="feature-stat"><b>48</b><span>Demos booked in 3 months</span></div>
+    </a>
+  </section>
+
+  <div class="gridfill" aria-hidden="true"></div>
   <section class="glow demo" id="demo" data-fx="demo">
     <canvas class="fx" aria-hidden="true"></canvas>
     <div class="demo-in">
@@ -477,6 +510,7 @@
     <nav aria-label="Footer">
       <a href="#services">Services</a>
       <a href="#team">Team</a>
+      <a href="#insights">Insights</a>
       <a href="#demo">Book a demo</a>
     </nav>
   </div>

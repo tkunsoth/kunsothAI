@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZ049054TW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GZ049054TW');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The human–AI agent partnership that booked 48 demos in 3 months — Kunsoth AI</title>
+<meta name="description" content="How a product that only spread by word of mouth became a weekly meeting engine: people made the calls, an AI agent did the legwork, and the team booked 48 demos in 3 months.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='7' fill='%230E0E0E'/%3E%3Cpath d='M9.6 7.4v13.2 M19.6 7.4l-6.1 6.1 M15.3 15.1l4.6 5.5' fill='none' stroke='%23fff' stroke-width='2.3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E0E0E;--white:#FFFFFF;--paper:#F7F7F7;--muted:#676767;--line:#141414;--hair:rgba(14,14,14,.12);
+    --display:'Inter Tight','Inter',system-ui,sans-serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --pad:clamp(16px,2.8vw,40px);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--white);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  p{margin:0}
+  h1,h2,h3{margin:0;font-family:var(--display);font-weight:600;letter-spacing:-.045em;line-height:.98}
+  ::selection{background:var(--ink);color:var(--white)}
+  .pad{padding-left:var(--pad);padding-right:var(--pad)}
+  .rule-t{border-top:1px solid var(--line)}
+  .rule-b{border-bottom:1px solid var(--line)}
+  .btn{display:inline-flex;align-items:center;gap:10px;font:500 14px/1 var(--sans);padding:14px 20px;border-radius:7px;border:1px solid var(--ink);transition:background .2s,color .2s;cursor:pointer;white-space:nowrap}
+  .btn-dark{background:var(--ink);color:var(--white)}
+  .btn-dark:hover{background:#2A2A2A}
+  .btn-light{background:var(--white);color:var(--ink);border-color:var(--white)}
+  a:focus-visible,button:focus-visible{outline:2px solid #8A8A8A;outline-offset:3px}
+
+  /* nav (same as homepage) */
+  .nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background-color .4s ease,color .4s ease,border-color .4s ease,transform .35s ease}
+  .nav.hide{transform:translateY(-100%)}
+  .nav-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
+  .brand{display:inline-flex;align-items:center;gap:10px;font:600 18px/1 var(--display);letter-spacing:-.03em}
+  .kmark{width:26px;height:26px;display:block;flex:0 0 auto}
+  .nav .kmark rect,.nav .kmark path{transition:fill .4s ease,stroke .4s ease}
+  .links{display:flex;gap:36px;font-size:13.5px}
+  .links a{opacity:.8}
+  .links a:hover{opacity:1}
+  .nav .btn{justify-self:end;padding:11px 18px;font-size:13px}
+  .nav.dark{background:rgba(14,14,14,.55);color:var(--white);border-bottom-color:rgba(255,255,255,.14);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%)}
+  .nav.dark .kmark rect{fill:var(--white)}
+  .nav.dark .kmark path{stroke:var(--ink)}
+  .nav.dark .btn-dark{background:var(--white);color:var(--ink);border-color:var(--white)}
+
+  /* article header */
+  .crumb{display:flex;justify-content:space-between;align-items:center;height:48px;font-size:12.5px;color:var(--muted)}
+  .crumb a{color:var(--ink);font-weight:500}
+  .head{padding-top:clamp(40px,6vw,88px);padding-bottom:clamp(32px,4vw,56px)}
+  .tag{display:inline-flex;align-items:center;height:28px;padding:0 12px;border:1px solid var(--line);border-radius:999px;font:500 12px/1 var(--sans)}
+  .head h1{margin-top:22px;font-size:clamp(40px,6.4vw,96px);max-width:15em}
+  .dek{margin-top:24px;max-width:40em;font:500 clamp(18px,1.6vw,22px)/1.45 var(--display);letter-spacing:-.015em;color:#333}
+  .meta{margin-top:22px;font-size:13px;color:var(--muted)}
+  .gridfill{height:clamp(56px,7vw,96px);background-image:linear-gradient(to right,rgba(14,14,14,.12) 1px,transparent 1px),linear-gradient(to bottom,rgba(14,14,14,.12) 1px,transparent 1px);background-size:.5cm .5cm}
+
+  /* body copy */
+  .body{max-width:760px;margin:0 auto;padding:clamp(48px,6vw,88px) var(--pad)}
+  .body h2{font-size:clamp(30px,3.4vw,44px);margin:clamp(48px,5vw,72px) 0 18px}
+  .body h2:first-child{margin-top:0}
+  .body p{font-size:18px;line-height:1.7;color:#222}
+  .body p + p{margin-top:16px}
+  .markets{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 4px}
+  .markets span{display:inline-flex;align-items:center;height:30px;padding:0 13px;border:1px solid var(--line);border-radius:999px;font:500 13px/1 var(--sans)}
+  .callout{margin:28px 0 8px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font:600 clamp(24px,2.6vw,34px)/1.15 var(--display);letter-spacing:-.035em}
+  .callout mark,.body p mark{background:var(--ink);color:var(--white);padding:0 .18em}
+  .body p mark{font-weight:600}
+  .split{display:grid;grid-template-columns:1fr 1fr;margin-top:24px;border:1px solid var(--line)}
+  .split > div{padding:22px 22px 24px}
+  .split > div + div{border-left:1px solid var(--line)}
+  .split h3{font-size:22px;letter-spacing:-.03em}
+  .split small{display:block;margin-top:6px;font-size:13px;color:var(--muted)}
+  .split ul{list-style:none;margin:16px 0 0;padding:0}
+  .split li{padding:10px 0;border-top:1px solid var(--hair);font-size:15px;display:flex;gap:12px;align-items:center}
+  .split li::before{content:"";flex:0 0 16px;height:16px;border:1px solid var(--line);border-radius:50%;background:radial-gradient(circle,var(--ink) 0 2.5px,transparent 3px)}
+  .split .agent{background:var(--paper)}
+  .body.quote{padding-top:clamp(56px,6vw,88px)}
+  .body.quote blockquote{margin-top:0}
+  blockquote{margin:clamp(40px,5vw,64px) 0 0;padding:0;font:600 clamp(26px,3vw,40px)/1.15 var(--display);letter-spacing:-.035em}
+  blockquote cite{display:block;margin-top:14px;font:500 13px/1 var(--sans);font-style:normal;color:var(--muted);letter-spacing:0}
+
+  /* page column: lined on both sides, graph paper outside */
+  .sheet{background-image:linear-gradient(to right,rgba(14,14,14,.12) 1px,transparent 1px),linear-gradient(to bottom,rgba(14,14,14,.12) 1px,transparent 1px);background-size:.5cm .5cm}
+  .page{width:min(920px,calc(100% - 2 * clamp(12px,4vw,48px)));margin:0 auto;background:var(--white);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  .page{--pad:clamp(20px,5vw,64px)}
+  .page .body{max-width:none}
+  .page .crow > div{padding-left:20px;padding-right:20px}
+  .page .crow > div:first-child{padding-left:var(--pad)}
+
+  /* flow chart */
+  .flow-wrap{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .flow-top{display:flex;justify-content:space-between;align-items:center;height:48px;font-size:12.5px;color:var(--muted);border-bottom:1px solid var(--line)}
+  .flow-top b{font-weight:500;color:var(--ink)}
+  .flow{position:relative;max-width:1240px;margin:0 auto}
+  .lane{display:grid;grid-template-columns:170px repeat(4,1fr);align-items:start;padding:34px 0}
+  .lane + .lane{border-top:1px solid var(--line)}
+  .lane-h b{display:block;font:600 22px/1 var(--display);letter-spacing:-.03em}
+  .lane-h span{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+  .lane.agent .lane-h b::after{content:"";display:inline-block;width:8px;height:8px;margin-left:8px;vertical-align:middle;background:var(--ink)}
+  .fn{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+  .fn .dot{width:84px;height:84px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:var(--white);position:relative;z-index:2;transition:background-color .8s ease}
+  .fn .dot svg{width:38%;height:38%;fill:none;stroke:var(--ink);stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;transition:transform .8s ease}
+  .fn em{font:500 14px/1.3 var(--sans);font-style:normal;max-width:12em;position:relative;z-index:2;background:var(--white);padding:2px 6px}
+  .fn.live .dot{background:repeating-conic-gradient(transparent 0 25%,#FFFFFF 0 50%) 0 0/6px 6px,conic-gradient(from 210deg,#FFB4B4,#FFE29A,#B7F0C0,#A9D4FF,#D6B8FF,#FFB4B4)}
+  .fn.live .dot svg{transform:scale(1.12)}
+  .fwires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+  .fwires path{fill:none;stroke:var(--ink);stroke-width:1}
+  .fwires .pkt{fill:var(--ink)}
+  .loop{position:absolute;left:0;top:50%;transform:translateY(-50%);z-index:3;font:600 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--white);padding:6px 8px;display:none}
+
+  .funnel-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:28px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+  .funnel-h h2{font-size:clamp(30px,3.4vw,44px)}
+  .page > .teaser:last-child{border-bottom:0}
+  .h2-note{font:400 15px/1 var(--sans);letter-spacing:0;color:#9A9A9A}
+  .compare{width:100%}
+  .crow{display:grid;grid-template-columns:1.4fr 1fr 1fr;border-bottom:1px solid var(--line)}
+  .crow > div{padding:18px var(--pad);font-size:15px}
+  .crow > div + div{border-left:1px solid var(--line)}
+  .crow.h > div{font:600 13px/1.2 var(--sans);letter-spacing:.02em;color:var(--muted);padding-top:14px;padding-bottom:14px}
+  .crow .v{font:600 22px/1.1 var(--display);letter-spacing:-.03em}
+  .tbd{outline:1px dashed #9A9A9A;outline-offset:3px;color:#9A9A9A}
+
+  /* funnel stage cards: full width; numbers pinned bottom-left and growing left to right */
+  .funnel{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .stages{display:grid;grid-template-columns:1fr 1.25fr 1.5625fr 1.953fr}
+  .stage{display:flex;flex-direction:column;min-height:clamp(264px,24vw,360px);padding:22px var(--pad) 24px;border-right:1px solid var(--line)}
+  .stage:last-child{border-right:0}
+  .stage .k{display:inline-block;align-self:flex-start;margin-top:calc(var(--n) * .16);padding:.22em .5em;font-size:max(11px,calc(var(--n) * .32));line-height:1.15;white-space:nowrap;background:var(--ink);color:var(--white)}
+  .stage .bm{margin-top:0;font-size:12.5px;line-height:1.35;color:var(--muted);max-width:22em}
+  .stage b{display:block;margin-top:auto;padding-top:20px;font-family:var(--display);font-weight:600;line-height:.85;letter-spacing:-.05em}
+  .st1{--n:clamp(30px,2.6vw,40px)}
+  .st2{--n:clamp(40px,3.8vw,58px)}
+  .st3{--n:clamp(50px,5vw,76px)}
+  .st4{--n:clamp(72px,8.4vw,132px)}
+  .stage b{font-size:var(--n)}
+  /* hover / focus: compare against the industry */
+  .cmpcard{cursor:default;outline:none}
+  .cmpcard:focus-visible{outline:2px solid #8A8A8A;outline-offset:-4px}
+  .cmpcard.cmp .k{background:#BDBDBD;color:var(--white)}
+  .cmpcard b{transition:font-size .6s cubic-bezier(.2,.8,.2,1),color .4s ease}
+  .st2.cmp b{font-size:calc(var(--n) * .48);color:#A3A3A3}
+  .st3.cmp b{font-size:calc(var(--n) * .52);color:#A3A3A3}
+  .stage.st4{background:var(--ink);color:var(--white)}
+  .stage.st4 .k{background:var(--white);color:var(--ink)}
+  .per{font:500 clamp(14px,1.43vw,20.5px)/1 var(--sans);letter-spacing:0;white-space:nowrap}
+  .per em{font-style:normal;font-weight:600;font-size:1.35em}
+
+  /* manual vs agent: one bar per metric; hover/focus swaps manual -> agent */
+  .vsband{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;container-type:inline-size}
+  /* cells run edge to edge; their content stays in the page column (--cw wide, --g gutter each side) */
+  .vs{position:relative;--cw:min(1102px,calc(100cqw - 2 * clamp(12px,4vw,48px) - 2px));--g:calc((100cqw - var(--cw)) / 2);--cpad:clamp(20px,5vw,64px)}
+  .page .vs{--cw:100cqw;--g:0px}
+  .vs-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:14px var(--pad);border-bottom:1px solid var(--line)}
+  .vs-head h3{font-size:22px;letter-spacing:-.03em}
+  .legend{display:flex;gap:18px;flex-wrap:wrap}
+  .legend span{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+  .sw{display:inline-block;width:14px;height:10px;border-radius:0 2px 2px 0}
+  .sw.c{background:#8A8A8A}
+  .sw.a{background:var(--ink)}
+  /* stacked: time, cost, rate, each row 80% the height of the one above */
+  .vs-grid{display:grid;grid-template-columns:1fr;grid-template-rows:minmax(282px,auto) minmax(204px,auto) minmax(163px,auto);border-bottom:1px solid var(--line)}
+  .vs-grid .panel{display:flex;flex-direction:column;justify-content:flex-end;padding:14px var(--cpad) 16px}
+  .vs-grid .vcard{padding-left:calc(var(--g) + var(--cpad));padding-right:calc(var(--g) + var(--cpad))}
+  .vs-grid .p1{border-bottom:1px solid var(--line);--n:clamp(48px,5vw,76px);--bh:22px}
+  .vs-grid .p2{border-bottom:1px solid var(--line);--n:clamp(36px,3.4vw,52px);--bh:14px}
+  .vs-grid .p3{--n:clamp(26px,2.2vw,34px);--bh:10px}
+  .vcard{position:relative;cursor:default;outline:none}
+  /* corner peel (as on the homepage service cards) reveals the multiple on hover/focus */
+  .peel{--ps:128px;position:absolute;top:0;right:0;width:var(--ps);height:var(--ps);pointer-events:none;z-index:2}
+  .peel-under,.peel-flap{position:absolute;inset:0;clip-path:polygon(100% 0,100% 0,100% 0);transition:clip-path .55s cubic-bezier(.2,.8,.2,1)}
+  .peel-under{background:var(--ink)}
+  .peel-under b{position:absolute;top:14px;right:12px;font:600 12.5px/1 var(--sans);color:var(--white);white-space:nowrap;opacity:0;transition:opacity .25s ease .2s}
+  .peel-shade{position:absolute;inset:0;filter:drop-shadow(-3px 4px 5px rgba(0,0,0,.28))}
+  .peel-flap{background:linear-gradient(45deg,#FFFFFF 0%,#F1F1F1 30%,#DADADA 50%)}
+  .vcard:hover .peel-under,.vcard:focus .peel-under{clip-path:polygon(0 0,100% 0,100% 100%)}
+  .vcard:hover .peel-flap,.vcard:focus .peel-flap{clip-path:polygon(0 0,100% 100%,0 100%)}
+  .vcard:hover .peel-under b,.vcard:focus .peel-under b{opacity:1}
+  .vcard:focus-visible{outline:2px solid #8A8A8A;outline-offset:-4px}
+  .vtop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+  .vtop .who{font-size:12.5px;color:var(--muted)}
+  .vtrack{height:var(--bh);margin-top:calc(var(--n) * .18)}
+  .vbar{display:block;height:100%;width:var(--c);min-width:4px;background:#8A8A8A;border-radius:0 4px 4px 0;transition:width .8s cubic-bezier(.2,.8,.2,1),background-color .4s ease}
+  .vcard.swap .vbar{width:var(--a);background:var(--ink)}
+  .vs.anim:not(.in) .vbar{width:0}
+  .vcard > b{display:block;font:600 var(--n)/.85 var(--display);letter-spacing:-.05em}
+  .vcard .k{display:inline-block;align-self:flex-start;margin-top:10px;padding:.22em .5em;font-size:max(11px,calc(var(--n) * .3));line-height:1.15;white-space:nowrap;background:var(--ink);color:var(--white)}
+  .vs-table{padding:10px calc(var(--g) + var(--cpad)) 12px;font-size:13.5px}
+  .vs-table summary{cursor:pointer;color:var(--muted)}
+  .vs-table table{margin-top:12px;border-collapse:collapse;width:100%}
+  .vs-table th,.vs-table td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--hair);font-variant-numeric:tabular-nums}
+  .vs-table thead th{font-weight:600;color:var(--muted)}
+
+  /* deep-dive teaser */
+  .teaser{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:clamp(28px,3vw,44px) var(--pad);border-bottom:1px solid var(--line);background:var(--paper)}
+  .teaser h3{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.035em}
+  .teaser p{margin-top:10px;color:var(--muted);max-width:44em}
+  .soon{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:999px;background:var(--ink);color:var(--white);font:500 12px/1 var(--sans)}
+
+  /* cta + footer */
+  .cta{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding:clamp(36px,4vw,56px) var(--pad);background:var(--ink);color:var(--white)}
+  .cta h2{font-size:clamp(32px,4vw,56px)}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:28px;padding-bottom:28px;font-size:13.5px}
+  .foot nav{display:flex;gap:28px;flex-wrap:wrap}
+  .foot nav a{opacity:.75}
+  .fine{padding-top:16px;padding-bottom:22px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cmpcard b{transition:none}.peel-under,.peel-flap,.peel-under b{transition:none}.vbar{transition:none}.fn .dot,.fn .dot svg{transition:none}}
+  @media (max-width:880px){
+    .links{display:none}
+    .nav-in{grid-template-columns:1fr auto}
+  }
+  @media (max-width:720px){
+    .vs-grid{grid-template-columns:1fr;grid-template-rows:none;min-height:0}
+    .split{grid-template-columns:1fr}
+    .split > div + div{border-left:0;border-top:1px solid var(--line)}
+    .lane{grid-template-columns:repeat(4,1fr);row-gap:18px;padding:24px 0}
+    .lane-h{grid-column:1 / -1;padding:0 var(--pad)}
+    .lane.human .lane-h{grid-column:2 / 5;padding-left:0}
+    .fn .dot{width:56px;height:56px}
+    .fn em{font-size:11.5px}
+    .page .crow{grid-template-columns:1fr 1fr 1fr}
+    .crow > div{padding:14px 12px;font-size:13.5px}
+    .crow .v{font-size:17px}
+    .teaser{grid-template-columns:1fr}
+    .stages{grid-template-columns:1fr 1fr}
+    .stage{min-height:204px;padding-left:14px;padding-right:14px}
+    .funnel-h,.vs-head{padding-left:14px;padding-right:14px}
+    .page .vs-head{padding-left:var(--pad);padding-right:var(--pad)}
+    .stage .k{font-size:max(11px,calc(var(--n) * .2))}
+    .stage:nth-child(2){border-right:0}
+    .stage:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav rule-b" id="nav">
+  <div class="nav-in pad">
+    <a href="/" class="brand" aria-label="Kunsoth AI home"><svg class="kmark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#0E0E0E"/><path d="M9.6 7.4v13.2 M19.6 7.4l-6.1 6.1 M15.3 15.1l4.6 5.5" fill="none" stroke="#FFFFFF" stroke-width="2.3" stroke-linecap="round"/></svg>Kunsoth AI</a>
+    <nav class="links" aria-label="Primary">
+      <a href="/#services">Services</a>
+      <a href="/#team">Team</a>
+      <a href="/#insights">Insights</a>
+      <a href="/#demo">Contact</a>
+    </nav>
+    <a href="/#demo" class="btn btn-dark">Book a demo</a>
+  </div>
+</header>
+
+<main>
+  <article>
+    <div class="crumb pad rule-b"><a href="/#insights">← Insights</a><span>Case study</span></div>
+
+    <header class="head pad">
+      <span class="tag">Case study</span>
+      <h1>The human–AI agent partnership that booked 48 demos in 3 months</h1>
+    </header>
+
+    <div class="sheet rule-t"><div class="page">
+    <div class="body">
+      <h2>The starting point</h2>
+      <p>Our client's target customers are local businesses. They had early signs of fit across several markets:</p>
+      <div class="markets"><span>Private clubs</span><span>Independent restaurants &amp; bars</span><span>Luxury salons &amp; spas</span><span>Specialty cafés</span></div>
+      <p class="callout">Every one of those customers had found them through <mark>word of mouth</mark>.</p>
+      <p>The client lacked a proactive outreach system, which made their growth depend on referrals. This hindered the speed required to quickly test out different markets and scale with confidence.</p>
+
+      <h2>The goal</h2>
+      <p>They wanted to validate those markets and expand into similar ones, <mark>proactively</mark>. We designed an email program to book meetings every week, then used the live feedback from each week's conversations to sharpen the next week's targeting.</p>
+
+      <h2>How we solved it</h2>
+      <p>We took a human+agent approach. Outreach, client relations and reading market feedback were still driven by <mark>human judgement</mark> whereas, finding the right prospects, verifying the owners, sourcing accurate contact, scheduling emails was all agentic.</p>
+      <div class="split">
+        <div class="human">
+          <h3>Human</h3><small>Judgement and relationships</small>
+          <ul><li>Outreach decisions</li><li>Client relations</li><li>Reading market feedback</li></ul>
+        </div>
+        <div class="agent">
+          <h3>Agent</h3><small>The legwork, on autopilot</small>
+          <ul><li>Finding the right prospects</li><li>Verifying each owner</li><li>Sourcing accurate contact details</li><li>Scheduling the emails</li></ul>
+        </div>
+      </div>
+    </div>
+
+    </div></div>
+
+    <section class="flow-wrap" aria-labelledby="flow-title">
+      <div class="flow-top pad"><b id="flow-title">The weekly loop</b></div>
+      <div class="flow pad" id="flow">
+        <div class="lane agent">
+          <div class="lane-h"><b>Agent</b><span>Automated legwork</span></div>
+          <div class="fn" id="f1" data-to="f2"><span class="dot"><svg viewBox="0 0 24 24"><path d="M10.5 4a6.5 6.5 0 1 0 0 13a6.5 6.5 0 1 0 0-13Z M15.4 15.4L20.5 20.5"/></svg></span><em>Find prospects</em></div>
+          <div class="fn" id="f2" data-to="f3"><span class="dot"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18Z M8 12.4l2.8 2.8L16.2 9.6"/></svg></span><em>Verify owners</em></div>
+          <div class="fn" id="f3" data-to="f4"><span class="dot"><svg viewBox="0 0 24 24"><path d="M12 4a4 4 0 1 0 0 8a4 4 0 1 0 0-8Z M4.5 20.5c0-4 3.4-6.8 7.5-6.8s7.5 2.8 7.5 6.8"/></svg></span><em>Source contacts</em></div>
+          <div class="fn" id="f4" data-to="f5"><span class="dot"><svg viewBox="0 0 24 24"><path d="M3.5 6h17v12h-17Z M3.8 6.6L12 12.6l8.2-6"/></svg></span><em>Schedule emails</em></div>
+        </div>
+        <div class="lane human">
+          <div class="lane-h"><b>Human</b><span>Judgement &amp; relationships</span></div>
+          <div class="fn" id="f8" data-to="f1"><span class="dot"><svg viewBox="0 0 24 24"><path d="M4 7h10 M18 7h2 M4 17h4 M12 17h8 M16 4.5v5 M10 14.5v5"/></svg></span><em>Refine targeting</em></div>
+          <div class="fn" id="f7" data-to="f8"><span class="dot"><svg viewBox="0 0 24 24"><path d="M4 19V11 M10 19V5 M16 19v-6 M3 19.5h18"/></svg></span><em>Read market feedback</em></div>
+          <div class="fn" id="f6" data-to="f7"><span class="dot"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9.5L4 20Z M8 9.5h8 M8 12.5h5"/></svg></span><em>Client relations</em></div>
+          <div class="fn" id="f5" data-to="f6"><span class="dot"><svg viewBox="0 0 24 24"><path d="M4 6h16v15H4Z M4 10.5h16 M8.5 3v5 M15.5 3v5 M8 14.5h3 M8 17.5h3 M13.5 14.5h3"/></svg></span><em>Meetings &amp; replies</em></div>
+        </div>
+        <svg class="fwires" id="fwires" aria-hidden="true"></svg>
+      </div>
+    </section>
+
+    <div class="sheet"><div class="page">
+    <div class="body quote">
+      <blockquote>This project has shown us the true power of AI: used judiciously, it can enhance our businesses multi-fold.<cite>The Kunsoth AI team</cite></blockquote>
+    </div>
+
+    <div class="teaser rule-t">
+      <div>
+        <h3>Inside the agent</h3>
+        <p>How we built it step by step, the regression tests that keep it from breaking, how we brought costs down strategically, and how it learns from every week of feedback.</p>
+      </div>
+      <span class="soon">Coming soon</span>
+    </div>
+
+    </div></div>
+
+    <section class="funnel" aria-labelledby="results-title">
+      <div class="funnel-h pad"><h2 id="results-title">Results <span class="h2-note">vs industry benchmarks</span></h2><span class="per"><em>3</em> months</span></div>
+      <div class="stages">
+        <div class="stage st1"><b>1,699</b><span class="k">Unique businesses reached</span></div>
+        <div class="stage st2 cmpcard" tabindex="0" aria-label="Reply rate 10.4%, industry average 5%"><b data-alt="5%">10.4%</b><span class="k" data-alt="Industry average">Reply rate</span></div>
+        <div class="stage st3 cmpcard" tabindex="0" aria-label="Positive replies 27%, industry average 14%"><b data-alt="14%">27%</b><span class="k" data-alt="Industry average">Positive replies</span></div>
+        <div class="stage st4"><b>48</b><span class="k">Meetings booked</span></div>
+      </div>
+    </section>
+
+    <div class="sheet"><div class="page">
+    <div class="body">
+      <p>Over the course of 3 months, we reached 1,699 unique businesses in 8 markets, averaging about 4 meetings per week.</p>
+      <p>The sheer scale of this level of iteration was possible due to the time and effort saved by delegating <mark>playbook-driven</mark> work to AI.</p>
+      <p>To see for ourselves how much this agentic AI system helped us, we first did the same work manually: to learn how to do it, and to test whether AI could do it at least as well, how long it would take and what it would cost. Here are the results:</p>
+    </div>
+    <section class="vsband" aria-label="Manual vs Agent">
+      <div class="vs" id="vs">
+        <div class="vs-head"><h3>Manual vs Agent</h3><div class="legend" aria-hidden="true"><span><i class="sw c"></i>Manual</span><span><i class="sw a"></i>Agent</span></div></div>
+        <div class="vs-grid">
+        <div class="panel p1 vcard" tabindex="0" style="--c:100%;--a:1.86%" aria-label="Time to source 500 contacts: manual 2,791 minutes (46.5 hours), agent 52 minutes. 54× faster.">
+          <span class="peel" aria-hidden="true"><span class="peel-under"><b>54× faster</b></span><span class="peel-shade"><span class="peel-flap"></span></span></span>
+          <div class="vtop"><span class="who" data-alt="Agent">Manual</span></div>
+          <b data-alt="52 min">2,791 min</b>
+          <div class="vtrack"><span class="vbar"></span></div>
+          <span class="k">Time to source 500 contacts</span>
+        </div>
+        <div class="panel p2 vcard" tabindex="0" style="--c:100%;--a:6.85%" aria-label="Cost for 500 contacts: manual $232.56, agent $15.92. 15× cheaper.">
+          <span class="peel" aria-hidden="true"><span class="peel-under"><b>15× cheaper</b></span><span class="peel-shade"><span class="peel-flap"></span></span></span>
+          <div class="vtop"><span class="who" data-alt="Agent">Manual</span></div>
+          <b data-alt="$15.92">$232.56</b>
+          <div class="vtrack"><span class="vbar"></span></div>
+          <span class="k">Cost for 500 contacts</span>
+        </div>
+        <div class="panel p3 vcard" tabindex="0" style="--c:1.86%;--a:100%" aria-label="Contacts sourced per hour: manual 10.8 per hour, agent 580 per hour. 54× the rate.">
+          <span class="peel" aria-hidden="true"><span class="peel-under"><b>54× the rate</b></span><span class="peel-shade"><span class="peel-flap"></span></span></span>
+          <div class="vtop"><span class="who" data-alt="Agent">Manual</span></div>
+          <b data-alt="580 / hr">10.8 / hr</b>
+          <div class="vtrack"><span class="vbar"></span></div>
+          <span class="k">Contacts sourced per hour</span>
+        </div>
+        </div>
+        <details class="vs-table"><summary>View as table</summary>
+          <table>
+            <thead><tr><th></th><th>Manual</th><th>Agent</th><th>Delta</th></tr></thead>
+            <tbody>
+              <tr><th>Time for 500 contacts</th><td>2,791 min (46.5 hrs)</td><td>52 min</td><td>54× faster</td></tr>
+              <tr><th>Rate</th><td>10.8 contacts/hour</td><td>580 contacts/hour</td><td>54×</td></tr>
+              <tr><th>Cost for 500</th><td>$232.56</td><td>$15.92</td><td>15× cheaper</td></tr>
+            </tbody>
+          </table>
+        </details>
+      </div>
+    </section>
+    </div></div>
+
+    <div class="cta">
+      <h2>Want a pipeline like this?</h2>
+      <a href="/#demo" class="btn btn-light">Book a demo →</a>
+    </div>
+  </article>
+</main>
+
+<footer>
+  <div class="foot pad">
+    <a href="/" class="brand"><svg class="kmark" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#0E0E0E"/><path d="M9.6 7.4v13.2 M19.6 7.4l-6.1 6.1 M15.3 15.1l4.6 5.5" fill="none" stroke="#FFFFFF" stroke-width="2.3" stroke-linecap="round"/></svg>Kunsoth AI</a>
+    <nav aria-label="Footer"><a href="/#services">Services</a><a href="/#team">Team</a><a href="/#insights">Insights</a><a href="/#demo">Book a demo</a></nav>
+  </div>
+  <div class="fine pad">© <span id="yr">2026</span> Kunsoth AI</div>
+</footer>
+
+<script>
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Top bar: dark once you scroll, hides on scroll down, returns on scroll up.
+  const nav = document.getElementById("nav");
+  let lastY = window.scrollY;
+  const navTone = () => {
+    const y = window.scrollY;
+    nav.classList.toggle("dark", y > 40);
+    if (Math.abs(y - lastY) > 4) { nav.classList.toggle("hide", y > lastY && y > 120); lastY = y; }
+  };
+  nav.addEventListener("focusin", () => nav.classList.remove("hide"));
+  window.addEventListener("scroll", navTone, { passive: true });
+  navTone();
+
+  // Flow chart: arrows between the circles, packets travelling along them.
+  const flow = document.getElementById("flow"), wires = document.getElementById("fwires");
+  function drawFlow() {
+    const box = flow.getBoundingClientRect();
+    wires.setAttribute("viewBox", `0 0 ${box.width} ${box.height}`);
+    let out = `<defs><marker id="fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#0E0E0E" stroke-width="1.4"/></marker><marker id="fd" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"><circle cx="5" cy="5" r="4" fill="#0E0E0E"/></marker></defs>`;
+    flow.querySelectorAll(".fn[data-to]").forEach((a, i) => {
+      const b = document.getElementById(a.dataset.to);
+      const ra = a.querySelector(".dot").getBoundingClientRect(), rb = b.querySelector(".dot").getBoundingClientRect();
+      const ax = ra.left + ra.width / 2 - box.left, ay = ra.top + ra.height / 2 - box.top;
+      const bx = rb.left + rb.width / 2 - box.left, by = rb.top + rb.height / 2 - box.top;
+      const dx = bx - ax, dy = by - ay, len = Math.hypot(dx, dy) || 1, ux = dx / len, uy = dy / len;
+      const d = `M${(ax + ux * ra.width / 2).toFixed(1)} ${(ay + uy * ra.height / 2).toFixed(1)}L${(bx - ux * (rb.width / 2 + 2)).toFixed(1)} ${(by - uy * (rb.height / 2 + 2)).toFixed(1)}`;
+      out += `<path d="${d}" marker-start="url(#fd)" marker-end="url(#fa)"/>`;
+      if (!calm) out += `<circle class="pkt" r="2.6" opacity="0"><animateMotion dur="2.4s" begin="${(i * 0.3).toFixed(2)}s" repeatCount="indefinite" path="${d}"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.8;1" dur="2.4s" begin="${(i * 0.3).toFixed(2)}s" repeatCount="indefinite"/></circle>`;
+    });
+    wires.innerHTML = out;
+  }
+  const redraw = () => requestAnimationFrame(drawFlow);
+  window.addEventListener("resize", redraw);
+  if ("ResizeObserver" in window) new ResizeObserver(redraw).observe(flow);
+  document.fonts && document.fonts.ready.then(redraw);
+  drawFlow();
+
+  // Manual vs agent bars: grow in when visible.
+  const vs = document.getElementById("vs");
+  if (vs && !calm && "IntersectionObserver" in window) {
+    vs.classList.add("anim");
+    const vo = new IntersectionObserver(([e]) => { if (e.isIntersecting) { vs.classList.add("in"); vo.disconnect(); } }, { threshold: 0.3 });
+    vo.observe(vs);
+  }
+
+  // Hover/focus swaps: funnel cards to the industry benchmark, manual cards to the agent, with a quick scramble.
+  const scramble = (el, to) => {
+    const run = (el._run = (el._run || 0) + 1);
+    if (calm) { el.textContent = to; return; }
+    const t0 = performance.now(), ms = 480;
+    const step = (t) => {
+      if (el._run !== run) return;
+      const p = Math.min(1, (t - t0) / ms), fixed = Math.floor(p * to.length);
+      el.textContent = [...to].map((c, i) => {
+        if (i < fixed || !/\d/.test(c)) return c;
+        return "0123456789"[(Math.random() * 10) | 0];
+      }).join("");
+      if (p < 1) requestAnimationFrame(step); else el.textContent = to;
+    };
+    requestAnimationFrame(step);
+  };
+  document.querySelectorAll(".cmpcard, .vcard").forEach((card) => {
+    const cls = card.classList.contains("vcard") ? "swap" : "cmp";
+    const swaps = [...card.querySelectorAll("[data-alt]")].map((el) => ({ el, base: el.textContent, alt: el.dataset.alt }));
+    const set = (on) => {
+      if (card.classList.contains(cls) === on) return;
+      card.classList.toggle(cls, on);
+      // only the numbers scramble; labels swap instantly
+      swaps.forEach((s) => s.el.tagName === "B" ? scramble(s.el, on ? s.alt : s.base) : (s.el.textContent = on ? s.alt : s.base));
+    };
+    card.addEventListener("pointerenter", () => set(true));
+    card.addEventListener("pointerleave", () => set(false));
+    card.addEventListener("focus", () => set(true));
+    card.addEventListener("blur", () => set(false));
+  });
+
+  // Step a highlight around the loop: agent legwork, then the human side, then back.
+  if (!calm) {
+    const order = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8"].map((id) => document.getElementById(id));
+    let k = -1;
+    const step = () => { order.forEach((n) => n.classList.remove("live")); k = (k + 1) % order.length; order[k].classList.add("live"); };
+    setTimeout(() => { step(); setInterval(step, 900); }, 350);
+  }
+</script>
+</body>
+</html>
